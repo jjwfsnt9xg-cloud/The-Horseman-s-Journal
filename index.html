@@ -8,20 +8,48 @@
 
 <body>
 
+<!-- HERO SECTION -->
 <div class="hero">
   <div class="overlay"></div>
 
   <div class="content">
     <h1>The Horseman’s Journal</h1>
-
     <p class="author">by Praveen</p>
 
     <p class="quote">
       a fragile human outside<br>
       and a horse inside
     </p>
+
+    <button onclick="toggleIntro()" class="read-btn">
+      Read below ↓
+    </button>
   </div>
 </div>
+
+<!-- HIDDEN INTRO -->
+<div id="intro" class="intro hidden">
+  <div class="intro-content">
+    <p>
+      I have spent years observing horses, not to control them,
+      but to understand them. Their movement, their silence,
+      and the way they communicate without words.
+    </p>
+
+    <p>
+      What I found was not training…  
+      but something deeper—  
+      trust, presence, and a connection that cannot be forced.
+    </p>
+  </div>
+</div>
+
+<script>
+function toggleIntro() {
+  var section = document.getElementById("intro");
+  section.classList.toggle("show");
+}
+</script>
 
 </body>
 </html>
