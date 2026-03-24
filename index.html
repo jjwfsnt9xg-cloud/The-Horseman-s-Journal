@@ -21,34 +21,60 @@
       and a horse inside”
     </p>
 
-    <!-- GOLD LINE -->
     <div class="gold-line"></div>
 
-    <button onclick="toggleIntro()" class="read-btn">
+    <button onclick="scrollToIntro()" class="read-btn">
       Read below ↓
     </button>
   </div>
 </div>
 
 <!-- INTRO -->
-<div id="intro" class="intro">
-  <div class="intro-content">
-    <p>I have spent years observing horses.</p>
-    <p>Not to control them, but to understand them.</p>
+<div id="intro" class="intro-section">
+  <div class="intro-text">
+
+    <p>I have lived eleven years among horses.</p>
+
+    <p>
+      And still, the world feels too small for me  
+      everywhere except in their shadow.
+    </p>
+
+    <p>
+      I never learned to belong among people.  
+      Only beside them.
+    </p>
+
   </div>
 </div>
 
-<!-- SECOND SECTION -->
-<div class="section-two">
-  <div>
-    <p class="line">I did not go to train them.</p>
-    <p class="line">I went to understand.</p>
+<!-- HORSES -->
+<div class="horses-section">
+
+  <!-- BLACK STALLION -->
+  <div class="horse-card">
+    <img src="hero.jpg">
+
+    <div class="horse-info">
+      <h2>The Black Stallion</h2>
+      <a href="stallion.html">Read story →</a>
+    </div>
   </div>
+
+  <!-- PLACEHOLDER FOR OTHERS -->
+  <div class="horse-card">
+    <img src="hero.jpg">
+
+    <div class="horse-info">
+      <h2>More stories coming</h2>
+    </div>
+  </div>
+
 </div>
 
 <script>
-function toggleIntro() {
-  document.getElementById("intro").classList.toggle("show");
+function scrollToIntro() {
+  document.getElementById("intro").scrollIntoView({ behavior: "smooth" });
 }
 </script>
 
