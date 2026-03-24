@@ -1,75 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>The Horseman’s Journal</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="overlay"></div>
-
-  <div class="content">
-    <h1>The Horseman’s Journal</h1>
-    <p class="author">by Praveen</p>
-
-    <p class="quote">
-      “a fragile human outside<br>
-      and a horse inside”
-    </p>
-
-    <button onclick="toggleIntro()" class="read-btn">
-      Read below ↓
-    </button>
-  </div>
-</div>
-
-<!-- INTRO (hidden) -->
-<div id="intro" class="intro">
-  <div class="intro-content">
-    <p>
-      I have spent years observing horses, not to control them,
-      but to understand them.
-    </p>
-
-    <p>
-      Their movement, their silence, and the way they communicate
-      without words.
-    </p>
-
-    <p>
-      What I found was not training…  
-      but something deeper—  
-      trust, presence, and connection.
-    </p>
-  </div>
-</div>
-
-<!-- SECOND SECTION -->
-<div class="section-two">
-  <div class="section-content">
-    
-    <p class="line">I did not go to them to train them.</p>
-
-    <p class="line">I went to understand.</p>
-
-    <p class="line">
-      And in that understanding…  
-      something began to change.
-    </p>
-
-  </div>
-</div>
-
-<script>
-function toggleIntro() {
-  var section = document.getElementById("intro");
-  section.classList.toggle("show");
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  color: white;
+  background: black;
 }
-</script>
 
-</body>
-</html>
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url('hero.jpg') center/cover no-repeat;
+  position: relative;
+}
+
+/* overlay */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+/* content */
+.content {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+}
+
+/* text */
+h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.author {
+  opacity: 0.7;
+}
+
+.quote {
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+
+/* button */
+.read-btn {
+  margin-top: 20px;
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 8px 15px;
+}
+
+/* intro */
+.intro {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.8s;
+}
+
+.intro.show {
+  max-height: 500px;
+  padding: 40px;
+}
+
+/* section */
+.section-two {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line {
+  margin: 20px 0;
+}
