@@ -1,118 +1,75 @@
-/* RESET */
-body {
-  margin: 0;
-  font-family: Georgia, serif;
-  color: white;
-  background: black;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Horseman’s Journal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-/* HERO */
-.hero {
-  height: 100vh;
-  background: url('hero.jpg') center/cover no-repeat;
-  position: relative;
-}
+<body>
 
-/* OVERLAY (deeper, more cinematic) */
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.85),
-    rgba(0,0,0,0.4)
-  );
-}
+<!-- HERO -->
+<div class="hero">
+  <div class="overlay"></div>
 
-/* CONTENT */
-.content {
-  position: absolute;
-  bottom: 12%;
-  left: 8%;
-  max-width: 500px;
-}
+  <div class="content">
+    <h1>The Horseman’s Journal</h1>
+    <p class="author">by Praveen</p>
 
-/* TITLE */
-h1 {
-  font-size: 3.2rem;
-  margin: 0;
-  letter-spacing: 1px;
-}
+    <p class="quote">
+      “a fragile human outside<br>
+      and a horse inside”
+    </p>
 
-/* AUTHOR */
-.author {
-  font-size: 0.9rem;
-  opacity: 0.6;
-  margin: 10px 0 25px 0;
-}
+    <button onclick="toggleIntro()" class="read-btn">
+      Read below ↓
+    </button>
+  </div>
+</div>
 
-/* QUOTE */
-.quote {
-  font-size: 1.5rem;
-  line-height: 1.7;
-  font-style: italic;
-  margin-bottom: 30px;
-  opacity: 0.95;
-}
+<!-- INTRO (hidden) -->
+<div id="intro" class="intro">
+  <div class="intro-content">
+    <p>
+      I have spent years observing horses, not to control them,
+      but to understand them.
+    </p>
 
-/* BUTTON */
-.read-btn {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  opacity: 0.7;
-  padding: 0;
-}
+    <p>
+      Their movement, their silence, and the way they communicate
+      without words.
+    </p>
 
-.read-btn:hover {
-  opacity: 1;
-}
+    <p>
+      What I found was not training…  
+      but something deeper—  
+      trust, presence, and connection.
+    </p>
+  </div>
+</div>
 
-/* INTRO */
-.intro {
-  max-height: 0;
-  overflow: hidden;
-  transition: all 1s ease;
-  background: black;
-}
+<!-- SECOND SECTION -->
+<div class="section-two">
+  <div class="section-content">
+    
+    <p class="line">I did not go to them to train them.</p>
 
-/* SHOW */
-.intro.show {
-  max-height: 800px;
-  padding: 60px 20px;
-}
+    <p class="line">I went to understand.</p>
 
-/* INTRO TEXT */
-.intro-content {
-  max-width: 600px;
-  margin: auto;
-  line-height: 1.9;
-  font-size: 1.15rem;
-  color: #ddd;
-}
-/* SECOND SECTION */
-.section-two {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #0a0a0a;
-  padding: 40px 20px;
-}
+    <p class="line">
+      And in that understanding…  
+      something began to change.
+    </p>
 
-/* text inside */
-.section-content {
-  max-width: 600px;
-  text-align: center;
-}
+  </div>
+</div>
 
-/* lines */
-.line {
-  font-size: 1.4rem;
-  margin-bottom: 30px;
-  line-height: 1.7;
-  opacity: 0.9;
+<script>
+function toggleIntro() {
+  var section = document.getElementById("intro");
+  section.classList.toggle("show");
 }
+</script>
+
+</body>
+</html>
