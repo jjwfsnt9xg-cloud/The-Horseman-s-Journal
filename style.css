@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: serif;
+  color: white;
+}
+
+/* background */
+.hero {
+  height: 100vh;
+  background: url('images/hero.jpg') center/cover no-repeat;
+  position: relative;
+}
+
+/* dark overlay */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+/* text block */
+.content {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  max-width: 500px;
+}
+
+/* title */
+h1 {
+  font-size: 2.8rem;
+  margin: 0;
+}
+
+/* author */
+.author {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+/* quote */
+.quote {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-style: italic;
+}
