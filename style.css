@@ -3,24 +3,25 @@ body {
   margin: 0;
   font-family: Georgia, serif;
   color: white;
+  background: black;
 }
 
-/* Hero Section */
+/* HERO */
 .hero {
   height: 100vh;
-  background: url('images/hero.jpg') center/cover no-repeat;
+  background: url('hero.jpg') center/cover no-repeat;
   position: relative;
 }
 
-/* Dark overlay */
+/* Overlay */
 .overlay {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.6);
 }
 
-/* Text container */
+/* Content */
 .content {
   position: absolute;
   bottom: 20%;
@@ -36,9 +37,8 @@ h1 {
 
 /* Author */
 .author {
-  font-size: 1rem;
   opacity: 0.7;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 /* Quote */
@@ -46,4 +46,42 @@ h1 {
   font-size: 1.4rem;
   line-height: 1.6;
   font-style: italic;
+  margin-bottom: 20px;
+}
+
+/* Button */
+.read-btn {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.read-btn:hover {
+  background: white;
+  color: black;
+}
+
+/* INTRO SECTION */
+.intro {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.8s ease;
+  background: black;
+}
+
+/* When visible */
+.intro.show {
+  max-height: 500px;
+  padding: 40px 20px;
+}
+
+/* Text inside */
+.intro-content {
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.8;
+  font-size: 1.1rem;
 }
