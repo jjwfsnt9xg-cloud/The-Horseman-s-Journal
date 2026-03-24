@@ -109,3 +109,42 @@ h1 {
   margin: 20px 0;
   font-size: 1.3rem;
 }
+/* STORY PAGE */
+
+/* hero */
+.story-hero {
+  height: 70vh;
+  background: url('hero.jpg') center/cover no-repeat;
+  position: relative;
+}
+
+/* overlay */
+.story-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+}
+
+/* title */
+.story-title {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+/* story text */
+.story-container {
+  max-width: 700px;
+  margin: auto;
+  padding: 60px 20px;
+  line-height: 1.9;
+
+  /* black horse tone */
+  color: #ddd;
+  font-size: 1.1rem;
+}
+
+.story-container p {
+  margin-bottom: 25px;
+}
