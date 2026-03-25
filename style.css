@@ -1,58 +1,129 @@
 body {
   margin: 0;
   font-family: Georgia, serif;
-  background: black;
   color: white;
-}
-
-/* HERO IMAGE */
-
-.story-hero {
-  height: 100vh;
-  background-image: url('hero.jpg'); /* IMPORTANT */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* TEXT SECTION */
-
-.story-text {
   background: black;
-  padding: 80px 20px;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('hero.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
-.text-container {
+/* DARK OVERLAY ON IMAGE */
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+/* HERO CONTENT */
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 5px;
+}
+
+.author {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.quote {
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 18px;
+}
+
+/* GOLD LINE */
+
+.gold-line {
+  width: 80px;
+  height: 2px;
+  background: gold;
+  margin: 20px auto;
+}
+
+/* BUTTON */
+
+.read-btn {
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid gold;
+  color: gold;
+  cursor: pointer;
+}
+
+/* ✨ TRANSITION (IMPORTANT) */
+
+.story-section {
+  position: relative;
+  background: black;
+  padding: 100px 20px 80px;
+  text-align: center;
+}
+
+/* FADE EFFECT BETWEEN HERO AND STORY */
+
+.story-section::before {
+  content: "";
+  position: absolute;
+  top: -150px;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent, black);
+}
+
+/* STORY TITLE */
+
+.story-title {
   max-width: 700px;
   margin: auto;
+  font-size: 28px;
+  margin-bottom: 40px;
 }
 
-.text-container h1 {
-  font-size: 32px;
-  margin-bottom: 20px;
+/* STORY TEXT */
+
+.story-text {
+  max-width: 700px;
+  margin: auto;
+  text-align: left;
+  line-height: 1.8;
 }
 
-.text-container p {
-  font-size: 18px;
-  line-height: 1.7;
-  opacity: 0.9;
+/* PARAGRAPHS */
+
+.story-text p {
+  margin-bottom: 16px;
+  font-size: 16px;
 }
 
-/* ARTICLES */
+/* HIGHLIGHT */
 
-.articles {
-  padding: 50px 20px;
+.highlight {
+  color: gold;
 }
 
-.article-card {
-  height: 250px;
-  margin-bottom: 30px;
-  background: #111;
-  display: flex;
-  align-items: flex-end;
-}
+/* ENDING */
 
-.article-content {
-  padding: 20px;
+.ending {
+  margin-top: 30px;
+  font-style: italic;
+  text-align: center;
 }
