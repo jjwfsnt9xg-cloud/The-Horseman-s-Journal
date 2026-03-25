@@ -1,7 +1,11 @@
 /* RESET */
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Inter', sans-serif;
   background: #121212;
   color: #F4EFE6;
@@ -12,6 +16,7 @@ body {
 .hero-story {
   position: relative;
   height: 100vh;
+  width: 100%;
   background: url('hero.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -51,7 +56,6 @@ body {
 
 /* INTRO SECTION */
 .intro-section {
-  background: #121212;
   padding: 100px 20px;
   max-width: 800px;
   margin: auto;
@@ -72,16 +76,10 @@ body {
 
 /* PHILOSOPHY SECTION */
 .philosophy-section {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 100px 10%;
-  gap: 40px;
-  align-items: center;
-}
-
-.philosophy-text {
-  flex: 1;
-  min-width: 300px;
+  padding: 100px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
 }
 
 .philosophy-text h2 {
@@ -99,15 +97,4 @@ body {
 .highlight {
   color: #C2A36B;
   font-style: italic;
-}
-
-/* VIDEO */
-.video-box {
-  flex: 1;
-  min-width: 300px;
-}
-
-.video-box video {
-  width: 100%;
-  border-radius: 8px;
 }
