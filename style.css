@@ -1,143 +1,89 @@
-/* RESET + BASE */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html,body { height: 100%; }
-body {
-  font-family: 'Inter', sans-serif;
-  background: #121212; /* midnight black */
-  color: #F4EFE6;      /* ivory parchment */
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* RESET */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+  background: #121212;
+  color: #F4EFE6;
 }
 
-/* ---- HERO (image element so path issues can't hide it) ---- */
-.hero-story {
+/* HERO SECTION */
+.hero {
   position: relative;
   height: 100vh;
   width: 100%;
-  display: block;
   overflow: hidden;
 }
 
-/* The actual <img> so we can control fit precisely */
+/* IMAGE */
 .hero-img {
   position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* cinematic crop on small screens */
+  object-fit: cover;
+
+  /* THIS FIXES YOUR CROPPING ISSUE */
   object-position: center center;
-  display: block;
-  transform-origin: center center;
-  /* we avoid any extra scale to prevent over-zooming */
 }
 
-/* Overlay to darken image for readable text */
+/* DARK OVERLAY */
 .hero-overlay {
   position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  pointer-events: none;
-}
-
-/* Centered text on top of the image */
-.hero-text {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-  text-align: center;
-  max-width: 900px;
-  padding: 0 20px;
-}
-
-/* Typography */
-.site-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(36px, 6vw, 64px);
-  letter-spacing: 1px;
-  color: #F4EFE6;
-  line-height: 1;
-  margin-bottom: 10px;
-}
-
-.author {
-  color: #C2A36B; /* antique gold */
-  font-size: 16px;
-  margin-bottom: 18px;
-}
-
-/* quote */
-.hero-quote {
-  color: #F4EFE6;
-  font-size: clamp(16px, 2.2vw, 22px);
-  line-height: 1.6;
-  margin-bottom: 24px;
-  font-style: italic;
-  opacity: 0.95;
-}
-
-/* read button */
-.read-btn {
-  background: transparent;
-  border: 1px solid #C2A36B;
-  color: #C2A36B;
-  padding: 10px 22px;
-  cursor: pointer;
-  font-size: 14px;
-  border-radius: 4px;
-}
-.read-btn:hover {
-  background: rgba(194,163,107,0.12);
-}
-
-/* ---- Intro section (clean black block) ---- */
-.intro-section {
-  background: #121212;
-  padding: 80px 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.intro-inner {
-  max-width: 860px;
   width: 100%;
-  text-align: center;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
 }
 
-.intro-inner h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  color: #F4EFE6;
+/* TEXT ON IMAGE */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+  max-width: 800px;
+  padding: 20px;
+}
+
+/* TITLE */
+.hero-content h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+/* AUTHOR */
+.author {
+  color: #C2A36B;
   margin-bottom: 30px;
 }
 
-.intro-inner p {
-  color: #DDD7CE; /* softer parchment */
-  line-height: 1.9;
-  font-size: 18px;
-  margin-bottom: 18px;
-  text-align: left;
+/* QUOTE */
+.quote {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 40px;
 }
 
-/* small screens: show more of image rather than heavy crop */
-@media (min-width: 1200px) {
-  /* On very wide screens we reduce crop by using contain-like behavior:
-     we center the image and allow more vertical space to appear */
-  .hero-img {
-    object-fit: contain;
-    object-position: center 35%;
-    background-color: #000;
-  }
-  /* Keep overlay slightly lighter on large screens */
-  .hero-overlay { background: rgba(0,0,0,0.45); }
+/* BUTTON */
+button {
+  padding: 12px 26px;
+  background: transparent;
+  border: 1px solid #C2A36B;
+  color: #C2A36B;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* small screens: tighten text sizes */
-@media (max-width: 520px) {
-  .hero-quote { font-size: 15px; }
-  .author { font-size: 13px; }
-  .site-title { font-size: 36px; }
-  .intro-inner p { font-size: 16px; }
+button:hover {
+  background: #C2A36B;
+  color: #121212;
+}
+
+/* NEXT SECTION */
+.intro {
+  padding: 120px 40px;
+  background: #121212;
+  text-align: center;
 }
