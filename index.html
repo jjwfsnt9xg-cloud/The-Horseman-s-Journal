@@ -8,12 +8,24 @@
 
 <body>
 
-<!-- HERO SECTION (EMPTY STRUCTURE FIRST) -->
+<!-- HERO SECTION -->
 <section class="hero">
 
+  <!-- IMAGE (this guarantees it loads) -->
+  <img src="hero.jpg" class="hero-img">
+
+  <!-- DARK OVERLAY -->
+  <div class="overlay"></div>
+
+  <!-- TEXT -->
   <div class="content">
     <h1>The Horseman’s Journal</h1>
-    <p>by Praveen Kumar</p>
+    <p class="author">by Praveen Kumar</p>
+
+    <p class="quote">
+      “a fragile human outside<br>
+      and a horse inside”
+    </p>
 
     <button onclick="scrollToIntro()">Read below ↓</button>
   </div>
@@ -21,7 +33,7 @@
 </section>
 
 
-<!-- SECOND SECTION (STORY BLOCK - COMPLETELY SEPARATE) -->
+<!-- SECOND SECTION -->
 <section id="intro" class="story-section">
 
   <h2>The Black Stallion Who Whispered My Name in Hoofbeats</h2>
