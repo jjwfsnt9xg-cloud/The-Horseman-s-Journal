@@ -1,129 +1,109 @@
-body {
+/* RESET */
+* {
   margin: 0;
-  font-family: Georgia, serif;
-  color: white;
-  background: black;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* HERO */
+body {
+  font-family: "Georgia", serif;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
 
+
+/* HERO SECTION */
 .hero {
   position: relative;
   height: 100vh;
-  background: url('hero.jpg') center/cover no-repeat;
+  background: url('horse.jpg') center/cover no-repeat; /* ADD YOUR IMAGE */
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
 }
 
-/* DARK OVERLAY ON IMAGE */
-
-.overlay {
+.hero-overlay {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.6);
 }
 
-/* HERO CONTENT */
-
-.content {
+.hero-content {
   position: relative;
+  text-align: center;
   z-index: 2;
 }
 
-h1 {
-  font-size: 36px;
-  margin-bottom: 5px;
+.hero h1 {
+  font-size: 60px;
+  letter-spacing: 2px;
 }
 
 .author {
-  font-size: 14px;
+  margin-top: 10px;
   opacity: 0.7;
 }
 
 .quote {
-  margin-top: 20px;
+  margin-top: 30px;
   font-style: italic;
-  font-size: 18px;
+  opacity: 0.8;
 }
-
-/* GOLD LINE */
 
 .gold-line {
-  width: 80px;
+  width: 100px;
   height: 2px;
   background: gold;
-  margin: 20px auto;
+  margin: 30px auto;
 }
-
-/* BUTTON */
 
 .read-btn {
-  padding: 10px 20px;
+  padding: 12px 25px;
+  border: 1px solid white;
   background: transparent;
-  border: 1px solid gold;
-  color: gold;
+  color: white;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-/* ✨ TRANSITION (IMPORTANT) */
+.read-btn:hover {
+  background: white;
+  color: black;
+}
 
+
+/* SECOND PAGE */
 .story-section {
-  position: relative;
   background: black;
-  padding: 100px 20px 80px;
+  padding: 120px 20px;
+}
+
+.story-container {
+  max-width: 800px;
+  margin: auto;
   text-align: center;
 }
 
-/* FADE EFFECT BETWEEN HERO AND STORY */
-
-.story-section::before {
-  content: "";
-  position: absolute;
-  top: -150px;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  background: linear-gradient(to bottom, transparent, black);
-}
-
-/* STORY TITLE */
-
 .story-title {
-  max-width: 700px;
-  margin: auto;
-  font-size: 28px;
-  margin-bottom: 40px;
+  font-size: 36px;
+  margin-bottom: 50px;
 }
-
-/* STORY TEXT */
-
-.story-text {
-  max-width: 700px;
-  margin: auto;
-  text-align: left;
-  line-height: 1.8;
-}
-
-/* PARAGRAPHS */
 
 .story-text p {
-  margin-bottom: 16px;
-  font-size: 16px;
+  margin-bottom: 18px;
+  line-height: 1.8;
+  opacity: 0.85;
 }
-
-/* HIGHLIGHT */
 
 .highlight {
   color: gold;
+  font-weight: bold;
 }
 
-/* ENDING */
-
 .ending {
-  margin-top: 30px;
-  font-style: italic;
-  text-align: center;
+  margin-top: 40px;
+  font-size: 18px;
+  opacity: 0.9;
 }
