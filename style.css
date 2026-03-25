@@ -1,4 +1,4 @@
-/* RESET EVERYTHING FIRST */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -7,45 +7,74 @@
 
 body {
   font-family: Georgia, serif;
-  overflow-x: hidden; /* VERY IMPORTANT */
+  overflow-x: hidden;
 }
 
 
-/* HERO SECTION (SEPARATE BLOCK) */
+/* HERO SECTION */
 .hero {
+  position: relative;
   height: 100vh;
   width: 100%;
-  background: #111; /* TEMPORARY (NO IMAGE YET) */
+  overflow: hidden;
+}
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* IMAGE FIX (this avoids ALL path issues) */
+.hero-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* DARK OVERLAY */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+/* TEXT */
+.content {
+  position: relative;
+  z-index: 2;
   text-align: center;
-
   color: white;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.content h1 {
+  font-size: 50px;
+}
+
+.quote {
+  margin-top: 20px;
+  font-style: italic;
+}
+
+button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
 }
 
 
-/* STORY SECTION (NEW BLOCK BELOW HERO) */
+/* SECOND SECTION */
 .story-section {
-  width: 100%;
   background: black;
   color: white;
-
   padding: 100px 20px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
-
-/* TEXT CONTAINER (THIS FIXES YOUR CUT ISSUE) */
 .story-text {
   max-width: 700px;
-  width: 100%;
-  text-align: center;
-
-  line-height: 1.8;
+  margin: auto;
   margin-top: 30px;
+  line-height: 1.8;
 }
