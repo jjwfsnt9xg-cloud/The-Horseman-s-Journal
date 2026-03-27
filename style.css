@@ -99,3 +99,53 @@ button:hover {
     transform: translate(-50%, -50%);
   }
 }
+/* INTRO SECTION */
+.intro-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* IMAGE */
+.intro-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* OVERLAY */
+.intro-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+/* TEXT */
+.intro-content {
+  position: absolute;
+  bottom: 15%; /* cinematic position */
+  left: 50%;
+  transform: translateX(-50%);
+
+  max-width: 800px;
+  text-align: center;
+  padding: 20px;
+}
+
+/* TITLE */
+.intro-content h2 {
+  font-size: 42px;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+}
+
+/* TEXT */
+.intro-content p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #F4EFE6;
+}
