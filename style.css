@@ -65,13 +65,13 @@ body::before {
   height: 100%;
 
   background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.3) 0%,
-    rgba(0,0,0,0.6) 50%,
-    rgba(0,0,0,0.9) 100%
+    to right,
+    rgba(0,0,0,0.75) 20%,   /* dark for text */
+    rgba(0,0,0,0.45) 45%,   /* softer */
+    rgba(0,0,0,0.15) 70%,   /* almost clear */
+    rgba(0,0,0,0.05) 100%   /* let horse shine */
   );
 }
-
 /* HERO CONTENT (FIXED CENTER) */
 .hero-content {
   position: absolute;
