@@ -237,3 +237,57 @@ body::before {
   box-shadow: 0 0 60px rgba(194,163,107,0.08);
   pointer-events: none;
 }
+/* ================= STALLION STORY ================= */
+
+.story-section {
+  position: relative;
+  padding: 120px 20px;
+
+  background: url('story-bg.jpg') no-repeat center center/cover;
+}
+
+/* DARK SOFT OVERLAY */
+.story-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0,0,0,0.65);
+}
+
+/* CONTENT BOX */
+.story-container {
+  position: relative;
+  z-index: 2;
+
+  max-width: 900px;
+  margin: auto;
+
+  background: rgba(10,10,10,0.75);
+  backdrop-filter: blur(6px);
+
+  padding: 60px;
+  border-radius: 14px;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+}
+
+/* TITLE */
+.story-container h2 {
+  color: #C2A36B;
+  margin-bottom: 30px;
+}
+
+/* TEXT */
+.story-text {
+  line-height: 1.9;
+  font-size: 17px;
+  color: #e0dbcf;
+}
+
+/* ENDING */
+.story-end {
+  margin-top: 40px;
+  font-style: italic;
+  color: #C2A36B;
+}
