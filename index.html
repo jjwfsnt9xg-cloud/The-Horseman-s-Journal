@@ -11,11 +11,20 @@
 <!-- HERO SECTION -->
 <section class="hero">
 
+  <!-- OPTIONAL NAV -->
+  <div class="nav">
+    <a href="#">Home</a>
+    <a href="#">Stories</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact</a>
+  </div>
+
   <img src="hero.jpg" class="hero-img">
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
     <h1>THE HORSEMEN</h1>
+
     <p class="author">Praveen Kumar</p>
 
     <p class="quote">
@@ -23,13 +32,22 @@
       A horse inside.”
     </p>
 
-    <button onclick="scrollToIntro()">Read Below ↓</button>
+    <!-- NEW LINE (IMPORTANT) -->
+    <p class="context">
+      Eleven years of learning trust from horses —
+      and from one black stallion who changed everything.
+    </p>
+
+    <!-- UPDATED BUTTON -->
+    <button class="cta-btn" onclick="scrollToIntro()">
+      Enter the Journal ↓
+    </button>
   </div>
 
 </section>
 
 
-<section class="intro-section">
+<section class="intro-section" id="intro">
 
   <div class="intro-container">
 
@@ -81,3 +99,15 @@
   </div>
 
 </section>
+
+<!-- SCROLL SCRIPT -->
+<script>
+function scrollToIntro() {
+  document.getElementById("intro").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+</script>
+
+</body>
+</html>
