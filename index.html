@@ -11,10 +11,10 @@
 <!-- HERO SECTION -->
 <section class="hero">
 
-  <!-- OPTIONAL NAV -->
+  <!-- NAV -->
   <div class="nav">
-    <a href="#">Home</a>
-    <a href="#">Stories</a>
+    <a href="index.html">Home</a>
+    <a href="bond.html">Stories</a>
     <a href="#">Gallery</a>
     <a href="#">Contact</a>
   </div>
@@ -32,30 +32,29 @@
       A horse inside.”
     </p>
 
-    <!-- NEW LINE (IMPORTANT) -->
     <p class="context">
       Eleven years of learning trust from horses —
       and from one black stallion who changed everything.
     </p>
 
-    <!-- UPDATED BUTTON -->
+    <!-- ✅ FIXED BUTTON -->
     <button class="cta-btn" onclick="enterJournal()">
-  Enter the Journal ↓
-</button>  </div>
+      Enter the Journal ↓
+    </button>
+  </div>
 
 </section>
 
 
+<!-- INTRO -->
 <section class="intro-section" id="intro">
 
   <div class="intro-container">
 
-    <!-- LEFT IMAGE -->
     <div class="intro-image">
       <img src="intro.jpg" alt="Horse and boy">
     </div>
 
-    <!-- TEXT -->
     <div class="intro-text">
 
       <h2>The Black Stallion Who Whispered My Name in Hoofbeats</h2>
@@ -99,12 +98,10 @@
 
 </section>
 
-<!-- SCROLL SCRIPT -->
+<!-- ✅ SCRIPT TO OPEN ESSAY -->
 <script>
-function scrollToIntro() {
-  document.getElementById("intro").scrollIntoView({
-    behavior: "smooth"
-  });
+function enterJournal() {
+  window.location.href = "bond.html";
 }
 </script>
 
