@@ -523,3 +523,47 @@ body::before {
   color: #C2A36B;
   font-style: italic;
 }
+/* ================= CINEMATIC ANIMATION ================= */
+
+/* INITIAL STATE (hidden) */
+.intro-line,
+.intro-break,
+.intro-title {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+/* VISIBLE STATE */
+.intro-line.show,
+.intro-break.show,
+.intro-title.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* STAGGER FEEL */
+.intro-line {
+  transition-delay: 0.2s;
+}
+
+/* BACKGROUND SLOW ZOOM */
+.intro-cinematic {
+  animation: slowZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes slowZoom {
+  0% {
+    background-size: 100%;
+  }
+  100% {
+    background-size: 110%;
+  }
+}
+
+/* SUBTLE GLOW ON HOVER IMPORTANT LINES */
+.intro-break:hover,
+.intro-line.big:hover {
+  color: #f5efe6;
+  text-shadow: 0 0 20px rgba(194,163,107,0.5);
+}
