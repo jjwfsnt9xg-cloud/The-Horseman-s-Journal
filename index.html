@@ -127,8 +127,9 @@
 
     <div class="story-text">
 
-      <p class="story-line">Then, three or four years ago, the black stallion walked into my days.</p>
-
+<p class="story-line">
+Then, three or four years ago, the black stallion walked into my days.
+</p>
       <p class="story-line">He arrived wearing fear like a second coat.</p>
 
       <p class="story-line big">One wild leap of panic — and he dragged me across the earth.</p>
@@ -273,9 +274,8 @@
 <!-- SCRIPT (keep this at bottom) -->
 <script>
 const elements = document.querySelectorAll(
-  '.intro-line, .intro-break, .intro-title, .stallion-line'
+  '.intro-line, .intro-break, .intro-title, .story-line'
 );
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
