@@ -567,3 +567,50 @@ body::before {
   color: #f5efe6;
   text-shadow: 0 0 20px rgba(194,163,107,0.5);
 }
+/* ================= STALLION ================= */
+
+.stallion-section {
+  position: relative;
+  height: 100vh;
+  background: url('stallion.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.stallion-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+}
+
+.stallion-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.stallion-title {
+  color: #C2A36B;
+  margin-bottom: 30px;
+}
+
+.stallion-line {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+  margin-bottom: 15px;
+}
+
+.stallion-line.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stallion-line.final {
+  font-size: 22px;
+  color: #C2A36B;
+  margin-top: 20px;
+}
