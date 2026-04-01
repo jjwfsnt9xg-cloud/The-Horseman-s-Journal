@@ -320,3 +320,22 @@
   </div>
 
 </section>
+<!-- SCRIPT (keep this at bottom) -->
+<script>
+const elements = document.querySelectorAll(
+  '.intro-line, .intro-break, .intro-title'
+);
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.2 });
+
+elements.forEach((el) => observer.observe(el));
+</script>
+
+</body>
+</html>
