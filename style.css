@@ -446,3 +446,80 @@ body::before {
 .article-card:hover p {
   color: #e6dfd2;
 }
+/* ================= CINEMATIC INTRO ================= */
+
+.intro-cinematic {
+  position: relative;
+  padding: 140px 20px;
+  background: url('intro-bg.jpg') no-repeat center center/cover;
+}
+
+/* DARK FILM OVERLAY */
+.intro-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,0.4) 0%,
+    rgba(0,0,0,0.85) 70%
+  );
+}
+
+/* CONTENT */
+.intro-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+/* TITLE */
+.intro-title {
+  color: #C2A36B;
+  font-size: 34px;
+  margin-bottom: 40px;
+}
+
+/* NORMAL TEXT */
+.intro-line {
+  font-size: 18px;
+  line-height: 1.9;
+  color: #d9d3c6;
+  margin-bottom: 20px;
+}
+
+/* BIG EMOTIONAL LINE */
+.intro-line.big {
+  font-size: 22px;
+  color: #f1eadf;
+}
+
+/* FADED LINE */
+.intro-line.fade {
+  opacity: 0.7;
+}
+
+/* BREAK LINE */
+.intro-break {
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #C2A36B;
+  margin: 40px 0;
+}
+
+/* HIGHLIGHT */
+.intro-highlight {
+  font-size: 20px;
+  font-style: italic;
+  color: #f5efe6;
+  margin: 30px 0;
+}
+
+/* ENDING */
+.intro-ending {
+  margin-top: 60px;
+  font-size: 20px;
+  color: #C2A36B;
+  font-style: italic;
+}
