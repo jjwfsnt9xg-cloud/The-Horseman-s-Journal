@@ -139,6 +139,7 @@ body::before {
   overflow: hidden;
 }
 
+/* BACKGROUND */
 .articles-bg {
   position: absolute;
   inset: 0;
@@ -147,6 +148,7 @@ body::before {
   z-index: 0;
 }
 
+/* DARK OVERLAY */
 .articles-section::before {
   content: "";
   position: absolute;
@@ -160,10 +162,11 @@ body::before {
   z-index: 1;
 }
 
+/* CONTENT */
 .articles-container {
   position: relative;
   z-index: 2;
-  max-width: 1100px;
+  max-width: 900px;
   margin: auto;
   text-align: center;
 }
@@ -176,67 +179,70 @@ body::before {
   letter-spacing: 2px;
 }
 
-/* GRID */
-.articles-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-}
 
-/* CARD */
-.article-card {
+/* ================= SINGLE BLOCK ARTICLES ================= */
+
+.articles-single {
   background: rgba(10,10,10,0.85);
-  padding: 40px;
-  border-radius: 16px;
+  border-radius: 20px;
+
   border: 1px solid rgba(194,163,107,0.25);
-  transition: all 0.4s ease;
-  cursor: pointer;
-  position: relative;
   overflow: hidden;
+
+  box-shadow:
+    0 40px 100px rgba(0,0,0,0.9),
+    0 0 40px rgba(194,163,107,0.08);
 }
 
-/* GLOW */
-.article-card::before {
+/* EACH ITEM */
+.article-item {
+  position: relative;
+  padding: 40px 30px;
+  text-align: center;
+
+  border-bottom: 1px solid rgba(194,163,107,0.15);
+
+  transition: all 0.3s ease;
+}
+
+/* REMOVE LAST BORDER */
+.article-item:last-child {
+  border-bottom: none;
+}
+
+/* SUBTLE LINE EFFECT */
+.article-item::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at top left,
-    rgba(194,163,107,0.08),
-    transparent 60%
-  );
-  opacity: 0;
-  transition: opacity 0.4s ease;
+  top: 0;
+  left: 50%;
+  width: 40%;
+  height: 1px;
+  background: rgba(194,163,107,0.2);
+  transform: translateX(-50%);
 }
 
 /* TEXT */
-.article-card h3 {
+.article-item h3 {
   color: #C2A36B;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  font-size: 22px;
 }
 
-.article-card p {
+.article-item p {
   color: #cfc7b8;
   font-size: 14px;
 }
 
 /* HOVER */
-.article-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow:
-    0 30px 60px rgba(0,0,0,0.8),
-    0 0 30px rgba(194,163,107,0.15);
-  border-color: rgba(194,163,107,0.6);
+.article-item:hover {
+  background: rgba(194,163,107,0.05);
 }
 
-.article-card:hover::before {
-  opacity: 1;
-}
-
-.article-card:hover h3 {
+.article-item:hover h3 {
   letter-spacing: 1px;
 }
 
-.article-card:hover p {
+.article-item:hover p {
   color: #e6dfd2;
 }
