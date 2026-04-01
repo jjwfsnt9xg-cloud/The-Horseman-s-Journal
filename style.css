@@ -475,7 +475,7 @@ body::before {
   font-size: 18px;
   line-height: 1.9;
   color: #d9d3c6;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 /* BIG EMOTIONAL LINE */
@@ -636,6 +636,35 @@ body::before {
   color: #f5efe6;
 }
 
+.story-line.compact {
+  line-height: 1.6;
+}
+/* ===== STORY ANIMATION FIX ===== */
+
+.story-line {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+  margin-bottom: 16px;
+}
+
+.story-line.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* BIG MOMENTS */
+.story-line.big {
+  font-size: 22px;
+  color: #f5efe6;
+}
+
+/* HIGHLIGHT */
+.story-line.highlight {
+  color: #C2A36B;
+}
+
+/* TIGHT TEXT */
 .story-line.compact {
   line-height: 1.6;
 }
