@@ -1,305 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>A Bond Beyond Words</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
-
-body {
-  font-family:'Cormorant Garamond', serif;
-  background:black;
-  color:#e8e6e3;
-  line-height:1.9;
-}
-
-/* HERO */
-.hero {
-  height:100vh;
-  background:
-  linear-gradient(to bottom, rgba(0,0,0,0.4), black),
-  url('your-horse-image.jpg') center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-
-.hero h1 {
-  font-size:64px;
-  font-weight:300;
-}
-
-/* CONTENT */
-.container {
-  max-width:900px;
-  margin:auto;
-  padding:80px 20px;
-}
-
-.section {
-  margin-bottom:80px;
-}
-
-p {
-  margin-bottom:24px;
-  font-size:20px;
-}
-
-em { color:#fff; }
-
-.divider {
-  text-align:center;
-  margin:60px 0;
-  opacity:0.4;
-  font-size:24px;
-}
-
-.quote {
-  text-align:center;
-  font-size:26px;
-  margin:100px 0;
-  font-style:italic;
-}
-
-/* FADE (only on sections, not every line) */
-.fade {
-  opacity:0;
-  transform:translateY(30px);
-  transition:all 1.2s ease;
-}
-
-.fade.show {
-  opacity:1;
-  transform:translateY(0);
-}
-</style>
+  <meta charset="utf-8" />
+  <title>A Bond Beyond Words — The Horseman</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Minimal page-specific styles to keep readable while using your existing style.css */
+    .bond-container { max-width:920px; margin:40px auto; padding:36px 20px; color:#e8e6e3; font-family:'Cormorant Garamond', serif; line-height:1.85; }
+    .bond-hero { height:48vh; background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.6)), url('story-hero.jpg') center/cover no-repeat; display:flex; align-items:center; justify-content:center; text-align:center; color:#F5EFE6; border-radius:12px; margin:24px auto; max-width:1200px; padding:20px; box-shadow:0 30px 80px rgba(0,0,0,0.6); }
+    .bond-hero h1 { font-size:42px; letter-spacing:2px; margin:0; }
+    .part { margin-top:28px; }
+    .part p { margin: 0 0 18px 0; font-size:18px; color:#e0dbcf; }
+    .part h2 { color:#C2A36B; margin-bottom:14px; }
+    .continue-btn { display:inline-block; margin-top:22px; padding:10px 20px; border:1px solid #C2A36B; background:transparent; color:#C2A36B; cursor:pointer; text-decoration:none; border-radius:6px; }
+    .nav-anchors { text-align:center; margin-top:18px; opacity:0.9; }
+    .page-note { font-size:13px; color:#bfb8aa; margin-top:14px; text-align:center; }
+    /* Make sure long blocks are easy to read on mobile */
+    @media (max-width:600px){ .bond-hero { height:34vh; } .bond-hero h1{font-size:28px} .bond-container{padding:20px} .part p{font-size:16px} }
+  </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <h1>A Bond Beyond Words</h1>
-</section>
+  <div class="bond-hero" role="banner" aria-label="A Bond Beyond Words">
+    <h1>A Bond Beyond Words</h1>
+  </div>
 
-<div class="container">
+  <main class="bond-container" id="bond-main">
 
-<!-- SECTION 1 -->
-<div class="section fade">
+    <!-- PART 1 SECTION -->
+    <section id="part-1" class="part" aria-labelledby="part1-title">
+      <h2 id="part1-title">Part 1</h2>
 
-<p>I didn't find them. I want to be clear about that.</p>
+      <!-- PART 1 -->
+      <!-- PASTE PART 1 CONTENT HERE (exact copy from assistant Part 1) -->
+    </section>
 
-<p>I didn't go looking. Didn't read a book about healing. Didn't follow someone's advice to <em>try something new, get outside, it'll be good for you</em> — all those clean, bright, well-meaning phrases that people hand to broken men like band-aids for amputations.</p>
+    <div class="nav-anchors">
+      <a class="continue-btn" href="#part-2" onclick="document.getElementById('part-2').scrollIntoView({behavior:'smooth'})">Continue → Part 2</a>
+    </div>
 
-<p>I didn't seek this out. I was <em>found.</em></p>
+    <!-- PART 2 SECTION (leave as placeholder for now) -->
+    <section id="part-2" class="part" aria-labelledby="part2-title">
+      <h2 id="part2-title">Part 2</h2>
 
-<p>By something that doesn't speak. By something that has no interest in my performance, no use for my masks, no capacity to be impressed or disappointed or <em>charmed</em> — and that absence, that total, non-negotiable absence of everything I'd spent my entire life calibrating myself to provide —</p>
+      <!-- PART 2 -->
+      <!-- PASTE PART 2 CONTENT HERE LATER (I'll provide in next message) -->
+    </section>
 
-<p><em>That's what saved me.</em></p>
+    <div class="nav-anchors">
+      <a class="continue-btn" href="#part-3" onclick="document.getElementById('part-3').scrollIntoView({behavior:'smooth'})">Continue → Part 3</a>
+    </div>
 
-</div>
+    <!-- PART 3 SECTION (placeholder) -->
+    <section id="part-3" class="part" aria-labelledby="part3-title">
+      <h2 id="part3-title">Part 3</h2>
 
-<div class="divider">—</div>
+      <!-- PART 3 -->
+      <!-- PASTE PART 3 CONTENT HERE LATER (I'll provide after Part 2) -->
+    </section>
 
-<div class="section fade">
+    <p class="page-note">Tip: to edit later open bond.html in a text editor and replace the text inside each section. Need help? I’ll show exact steps.</p>
 
-<p>Not the word. Not yet. The word comes later. First — the <em>moment.</em></p>
-
-<p>The first time I stood next to a horse.</p>
-
-<p>Not rode. Not led. Not any of the verbs that imply action, direction, <em>purpose.</em> I just — stood.</p>
-
-<p>In a field.</p>
-
-<p>Next to a body so much larger than mine that the scale alone should have terrified me, and it didn't.</p>
-
-<p>It <em>didn't.</em></p>
-
-<p>And the not-being-terrified was so foreign, so <em>unrecognizable,</em> that I almost mistook it for numbness.</p>
-
-<p>Because I knew fear.</p>
-
-<p>Fear was my operating system.</p>
-
-<p>Fear was the electricity that powered every smile, every nod, every performance of adequacy I'd ever produced.</p>
-
-<p>Fear was the thing I woke up to and fell asleep under and navigated <em>through,</em> every day.</p>
-
-<p>I <em>knew</em> fear.</p>
-
-<p>I was built on it.</p>
-
-</div>
-<!-- SECTION 2 -->
-<div class="section fade">
-
-<p>And this animal — this enormous, breathing, <em>warm</em> animal standing three feet from me in a field that smelled like earth and rain and something older than language — didn't trigger it.</p>
-
-<p>Not a flicker. Not a whisper. Not a single neural ping.</p>
-
-<p>Instead — something in my chest <em>released.</em></p>
-
-<p>Not relaxed. <em>Released.</em></p>
-
-<p>Like a fist that had been clenched so long the fingers had fused… and something pried them open.</p>
-
-<p>And underneath — just a heartbeat.</p>
-
-<p>My heartbeat. Raw. Vulnerable. Alive.</p>
-
-<p>And the horse <em>heard</em> it.</p>
-
-<p>It turned its head. And it looked at me.</p>
-
-<p>And the eyes — God. The <em>eyes.</em></p>
-
-<p>Not human. Not evaluating. Not judging.</p>
-
-<p>Just still. Just present.</p>
-
-<p>Just one message:</p>
-
-<p><em>You are here.</em></p>
-
-<p>And something inside me broke <em>open.</em></p>
-
-<p>And I stood there. And I breathed.</p>
-
-<p>Deep. Fully. For the first time.</p>
-
-<p>And the horse breathed with me.</p>
-
-<p>And I thought:</p>
-
-<p><em>This is what it feels like to be near something alive that wants nothing from you except your presence.</em></p>
-
-</div>
-
-<div class="divider">—</div>
-<!-- SECTION 3 -->
-<div class="section fade">
-
-<p>They teach me.</p>
-
-<p>Not in words. Not in lessons. Not in the way humans teach.</p>
-
-<p>They teach by being.</p>
-
-<p>By existing in a state so grounded, so unperformative, so completely finished — that standing near them becomes a mirror.</p>
-
-<p>And what's real… is enough.</p>
-
-<p>They teach me patience.</p>
-
-<p>Not waiting. Not suppression.</p>
-
-<p>True patience — the absence of urgency.</p>
-
-<p>The kind that lives only in the present moment.</p>
-
-<p>I learn:</p>
-
-<p>Love isn't rushed.</p>
-
-<p>It isn't forced.</p>
-
-<p>It isn't performed into existence.</p>
-
-<p>The horse responds to one thing:</p>
-
-<p><em>Consistency.</em></p>
-
-<p>Not grand gestures.</p>
-
-<p>Not intensity.</p>
-
-<p>Just showing up.</p>
-
-<p>Again. And again. And again.</p>
-
-<p>Until one day…</p>
-
-<p>The horse walks toward you.</p>
-
-</div>
-
-<div class="divider">—</div>
-<!-- SECTION 4 -->
-<div class="section fade">
-
-<p>And when it does…</p>
-
-<p>The feeling isn't triumph.</p>
-
-<p>It's <em>grief.</em></p>
-
-<p>Because you realize — this is what it was supposed to feel like all along.</p>
-
-<p>Not forced. Not earned through performance.</p>
-
-<p>Just given.</p>
-
-<p>Freely.</p>
-
-<p>And the grief is for every time you accepted less.</p>
-
-<p>Every time you called a transaction love.</p>
-
-<p>Every time you believed you had to become something to be allowed closeness.</p>
-
-<p>But here —</p>
-
-<p>You don't.</p>
-
-<p>You just have to be.</p>
-
-</div>
-
-<div class="divider">—</div>
-<!-- FINAL -->
-<div class="section fade">
-
-<p>I come back every day now.</p>
-
-<p>Not because I'm healed.</p>
-
-<p>But because something in me remembers.</p>
-
-<p>And slowly — piece by piece — I am returning.</p>
-
-<p>To myself.</p>
-
-<p>To stillness.</p>
-
-<p>To truth.</p>
-
-<p>To presence.</p>
-
-</div>
-
-<div class="quote fade">
-*Still here.*<br>
-*Still here.*<br>
-*Still here.*
-</div>
-<script>
-const fades=document.querySelectorAll('.fade');
-
-function showOnScroll(){
-  fades.forEach(el=>{
-    const rect=el.getBoundingClientRect();
-    if(rect.top<window.innerHeight-50){
-      el.classList.add('show');
-    }
-  });
-}
-
-window.addEventListener('scroll',showOnScroll);
-</script>
+  </main>
 
 </body>
 </html>
