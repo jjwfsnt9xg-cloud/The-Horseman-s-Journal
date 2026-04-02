@@ -236,11 +236,10 @@ body::before {
 
 .intro-cinematic {
   position: relative;
-  padding: 120px 20px;
+  padding: 60px 20px; /* reduced from 120 → fixes gap */
   min-height: 100vh;
   overflow: hidden;
 }
-
 /* BACKGROUND */
 .intro-bg {
   position: absolute;
