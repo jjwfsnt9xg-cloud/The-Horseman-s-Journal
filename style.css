@@ -32,7 +32,6 @@ body::before {
   max-width: 1300px;
   height: 85vh;
   margin: 40px auto;
-
   border-radius: 20px;
   overflow: hidden;
 
@@ -44,12 +43,11 @@ body::before {
     0 25px 50px rgba(0,0,0,0.7),
     inset 0 1px 0 rgba(255,255,255,0.08);
 
-  transform: perspective(1200px);
-  transition: all 0.4s ease;
+  transition: 0.4s ease;
 }
 
 .hero:hover {
-  transform: perspective(1200px) translateY(-6px) scale(1.01);
+  transform: translateY(-6px) scale(1.01);
 }
 
 /* IMAGE */
@@ -59,7 +57,7 @@ body::before {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.88) contrast(1.05);
+  filter: brightness(0.95) contrast(1.1);
   z-index: 0;
 }
 
@@ -69,14 +67,14 @@ body::before {
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(0,0,0,0.88) 25%,
-    rgba(0,0,0,0.65) 55%,
-    rgba(0,0,0,0.3) 100%
+    rgba(0,0,0,0.85) 25%,
+    rgba(0,0,0,0.6) 55%,
+    rgba(0,0,0,0.25) 100%
   );
   z-index: 1;
 }
 
-/* BORDER EDGE */
+/* BORDER */
 .hero::before {
   content: "";
   position: absolute;
@@ -97,7 +95,6 @@ body::before {
   z-index: 3;
 }
 
-/* TITLE (FIXED RESPONSIVE + ALIGNMENT) */
 .hero-content h1 {
   font-size: clamp(42px, 6vw, 72px);
   letter-spacing: 3px;
@@ -106,7 +103,6 @@ body::before {
   text-shadow: 0 15px 40px rgba(0,0,0,0.9);
 }
 
-/* AUTHOR */
 .author {
   color: #C2A36B;
   margin-bottom: 15px;
@@ -114,7 +110,6 @@ body::before {
   letter-spacing: 2px;
 }
 
-/* QUOTE */
 .quote {
   font-size: clamp(16px, 2vw, 22px);
   margin-bottom: 20px;
@@ -124,7 +119,6 @@ body::before {
   margin-right: auto;
 }
 
-/* CONTEXT (FIXED WIDTH + BALANCE) */
 .context {
   font-size: clamp(14px, 1.5vw, 16px);
   color: #bfb8aa;
@@ -133,14 +127,12 @@ body::before {
   line-height: 1.6;
 }
 
-
 /* NAV */
 .nav {
   position: absolute;
   top: 20px;
   right: 40px;
   z-index: 4;
-
   background: rgba(0,0,0,0.35);
   padding: 8px 14px;
   border-radius: 8px;
@@ -165,21 +157,15 @@ body::before {
 .enter-story {
   display: inline-block;
   margin-top: 15px;
-
   padding: 13px 30px;
-
   font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;
-
   color: #C2A36B;
   border: 1px solid rgba(194,163,107,0.5);
-
   text-decoration: none;
-
   background: rgba(0,0,0,0.4);
   backdrop-filter: blur(6px);
-
   transition: all 0.35s ease;
 }
 
@@ -230,13 +216,6 @@ body::before {
   box-shadow: 0 40px 120px rgba(0,0,0,0.9);
 }
 
-.articles-title {
-  color: #C2A36B;
-  font-size: 36px;
-  margin-bottom: 70px;
-  text-align: center;
-}
-
 .articles-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -247,98 +226,79 @@ body::before {
   padding: 35px;
   border-radius: 14px;
   background: rgba(15,15,15,0.7);
-
   border: 1px solid rgba(255,255,255,0.05);
-
-  transition: all 0.35s ease;
-  cursor: pointer;
+  transition: 0.35s ease;
 }
 
 .article-item:hover {
   transform: translateY(-8px);
   box-shadow: 0 25px 60px rgba(0,0,0,0.8);
-  border-color: rgba(194,163,107,0.4);
-}
-
-.article-item h3 {
-  color: #C2A36B;
-  margin-bottom: 10px;
-}
-
-.article-item p {
-  color: #cfc7b8;
 }
 
 
-/* ================= ESSAY PAGE ================= */
+/* ================= CINEMATIC ARTICLE FIX ================= */
 
 .intro-cinematic {
   position: relative;
   min-height: 100vh;
-  padding: 120px 20px;
-  background: #0a0a0a;
+  padding: 140px 20px;
   overflow: hidden;
 }
 
+/* BACKGROUND */
 .intro-cinematic .intro-bg {
   position: absolute;
   inset: 0;
   background: url('hero.jpg') center/cover no-repeat;
-  opacity: 0.7;
+  opacity: 0.55;
 }
 
+/* HORSE */
 .intro-cinematic .intro-horse {
   position: absolute;
   inset: 0;
   background: url('horse.png') center/contain no-repeat;
-  opacity: 0.15;
+  opacity: 0.12;
 }
 
+/* LIGHT OVERLAY */
 .intro-cinematic .intro-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(0,0,0,0.85), #000);
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.85)
+  );
 }
 
+/* REMOVE BOX COMPLETELY */
 .intro-cinematic .intro-wrapper {
   position: relative;
   z-index: 3;
   max-width: 720px;
   margin: 0 auto;
-  padding: 70px 55px;
-
-  background: rgba(10, 10, 10, 0.92);
-
-  border-radius: 20px;
-  border: 1px solid rgba(194, 163, 107, 0.25);
-
-  box-shadow: 0 50px 120px rgba(0,0,0,0.95);
 }
 
+/* TITLE */
 .intro-cinematic h1 {
-  font-size: 2.7rem;
-  color: #fff;
+  font-size: clamp(32px, 4vw, 52px);
   text-align: center;
   margin-bottom: 50px;
+  line-height: 1.2;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.9);
 }
 
+/* TEXT */
 .intro-cinematic .intro-text p {
   font-size: 1.1rem;
   line-height: 1.9;
   margin-bottom: 30px;
   color: #e8e0d0;
-  text-align: justify;
+  text-align: left;
 }
 
-.intro-cinematic .intro-text p:last-child {
-  text-align: center;
-  font-size: 2rem;
-  margin-top: 50px;
-  color: #C2A36B;
-}
-
-
-/* ================= MOBILE FIX ================= */
+/* ================= MOBILE ================= */
 
 @media (max-width: 900px) {
   .hero {
@@ -351,9 +311,5 @@ body::before {
 
   .hero-content h1 {
     font-size: clamp(32px, 8vw, 52px);
-  }
-
-  .intro-cinematic .intro-wrapper {
-    padding: 40px 25px;
   }
 }
