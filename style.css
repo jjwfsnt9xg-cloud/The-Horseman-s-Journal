@@ -152,12 +152,15 @@ body::before {
 }
 
 
-/* ================= INTRO (SCROLL VERSION) ================= */
+/* ================= CINEMATIC INTRO BLOCK ================= */
 
-.intro-cinematic {
+.intro-block {
   position: relative;
-  min-height: 120vh;
-  padding: 160px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
   overflow: hidden;
 }
 
@@ -165,54 +168,45 @@ body::before {
 .intro-bg {
   position: absolute;
   inset: 0;
-  background: url('hero.jpg') center/cover no-repeat;
-  opacity: 0.75;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.7);
   z-index: 0;
 }
 
-/* HORSE IMAGE */
-.intro-horse {
-  position: absolute;
-  inset: 0;
-  background: url('horse.png') center/contain no-repeat;
-  opacity: 0.25;
-  z-index: 1;
-}
-
-/* DARK OVERLAY */
+/* OVERLAY (LIGHT — IMPORTANT) */
 .intro-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.5),
-    rgba(0,0,0,0.85)
+    rgba(0,0,0,0.3),
+    rgba(0,0,0,0.75)
   );
-  z-index: 2;
+  z-index: 1;
 }
 
-/* TEXT WRAPPER */
-.intro-wrapper {
+/* TEXT */
+.intro-content {
   position: relative;
-  z-index: 3;
-  max-width: 720px;
-  margin: 0 auto;
+  z-index: 2;
+  max-width: 750px;
+  text-align: left;
 }
 
 /* TITLE */
-.intro-cinematic h1 {
+.intro-content h1 {
   font-size: clamp(32px, 4vw, 52px);
-  text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   line-height: 1.2;
   text-shadow: 0 10px 40px rgba(0,0,0,0.9);
 }
 
-/* TEXT */
-.intro-text p {
+/* PARAGRAPHS */
+.intro-content p {
   font-size: 1.1rem;
   line-height: 1.9;
-  margin-bottom: 28px;
+  margin-bottom: 25px;
   color: #e8e0d0;
 }
 
