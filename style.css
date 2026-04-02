@@ -30,7 +30,7 @@ body::before {
   width: 90%;
   max-width: 1200px;
   height: 85vh;
-  margin: 40px auto;
+  margin: 40px auto 10px; /* tightened bottom */
 
   border-radius: 20px;
   overflow: hidden;
@@ -176,6 +176,41 @@ body::before {
 }
 
 
+/* ================= STORY ENTRY (FIXED POSITIONING) ================= */
+
+/* THIS centers it under hero perfectly */
+.enter-story {
+  display: block;
+  width: fit-content;
+  margin: 20px auto 80px; /* centered + spacing below */
+
+  padding: 12px 28px;
+
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #C2A36B;
+  border: 1px solid rgba(194,163,107,0.5);
+
+  text-decoration: none;
+
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(6px);
+
+  transition: all 0.35s ease;
+}
+
+.enter-story:hover {
+  color: #121212;
+  background: #C2A36B;
+
+  box-shadow: 0 0 25px rgba(194,163,107,0.4);
+
+  transform: translateY(-2px);
+}
+
+
 /* ================= ARTICLES (FINAL CINEMATIC BLOCK) ================= */
 
 .articles-section {
@@ -228,7 +263,7 @@ body::before {
     0 0 60px rgba(194,163,107,0.08);
 }
 
-/* TITLE INSIDE BOX */
+/* TITLE */
 .articles-title {
   color: #C2A36B;
   font-size: 34px;
@@ -277,35 +312,4 @@ body::before {
 
 .article-item:hover p {
   color: #e6dfd2;
-}
-/* ================= STORY ENTRY ================= */
-
-.enter-story {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 12px 28px;
-
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-
-  color: #C2A36B;
-  border: 1px solid rgba(194,163,107,0.5);
-
-  text-decoration: none;
-
-  background: rgba(0,0,0,0.3);
-  backdrop-filter: blur(6px);
-
-  transition: all 0.35s ease;
-}
-
-/* HOVER (very important feel) */
-.enter-story:hover {
-  color: #121212;
-  background: #C2A36B;
-
-  box-shadow: 0 0 25px rgba(194,163,107,0.4);
-
-  transform: translateY(-2px);
 }
