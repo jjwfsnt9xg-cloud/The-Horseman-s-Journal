@@ -293,3 +293,72 @@ body::before {
     grid-template-columns: 1fr;
   }
 }
+/* ================= FINAL INTRO (JOURNAL) ================= */
+
+.intro-cinematic {
+  position: relative;
+  min-height: 140vh;
+  padding: 140px 20px;
+  overflow: hidden;
+}
+
+/* BACKGROUND HORSE */
+.intro-bg {
+  position: absolute;
+  inset: 0;
+  background: url('horse.png') center/cover no-repeat;
+  z-index: 0;
+}
+
+/* LIGHT OVERLAY */
+.intro-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.3),
+    rgba(0,0,0,0.5)
+  );
+  z-index: 1;
+}
+
+/* JOURNAL PAGE */
+.intro-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 80px 70px;
+
+  background: url('journal.png') center/cover no-repeat;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 40px 100px rgba(0,0,0,0.8),
+    inset 0 0 40px rgba(0,0,0,0.15);
+}
+
+/* TITLE */
+.intro-cinematic h1 {
+  color: #2b2b2b;
+  font-size: 2.6rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* TEXT */
+.intro-text p {
+  color: #3a352c;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin-bottom: 28px;
+  text-align: justify;
+}
+
+/* FINAL SYMBOL */
+.intro-text p:last-child {
+  text-align: center;
+  font-size: 2rem;
+  color: #8b6b3f;
+}
