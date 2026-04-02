@@ -152,64 +152,66 @@ body::before {
 }
 
 
-/* ================= CINEMATIC INTRO BLOCK ================= */
+/* ================= INTRO (TEXT OVER IMAGE) ================= */
 
-.intro-block {
+.intro-cinematic {
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 80px 20px;
+  min-height: 160vh; /* BIG so full intro shows */
+  padding: 120px 20px;
   overflow: hidden;
 }
 
-/* BACKGROUND IMAGE */
+/* YOUR HORSE IMAGE */
 .intro-bg {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
-  filter: brightness(0.7);
+  background: url('horse.png') center/cover no-repeat;
+  filter: brightness(0.55);
   z-index: 0;
 }
 
-/* OVERLAY (LIGHT — IMPORTANT) */
+/* DARK OVERLAY */
 .intro-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.3),
-    rgba(0,0,0,0.75)
+    rgba(0,0,0,0.9),
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.95)
   );
   z-index: 1;
 }
 
-/* TEXT */
-.intro-content {
+/* TEXT CONTAINER */
+.intro-wrapper {
   position: relative;
   z-index: 2;
-  max-width: 650px;
-  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* TITLE */
-.intro-content h1 {
-  font-size: clamp(32px, 4vw, 52px);
-  margin-bottom: 40px;
+.intro-cinematic h1 {
+  font-size: 2.8rem;
+  margin-bottom: 50px;
   line-height: 1.2;
-  text-shadow: 0 10px 40px rgba(0,0,0,0.9);
 }
 
-/* PARAGRAPHS */
-.intro-content p {
-  font-size: 1.1rem;
+/* TEXT */
+.intro-text p {
+  font-size: 1.15rem;
   line-height: 1.9;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   color: #e8e0d0;
 }
 
+/* FINAL SYMBOL */
+.intro-text p:last-child {
+  font-size: 2.2rem;
+  color: #C2A36B;
+}
 /* ================= ARTICLES ================= */
 
 .articles-section {
