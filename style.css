@@ -241,39 +241,39 @@ body::before {
   overflow: hidden;
 }
 
-/* Background image */
+/* Use hero.jpg as strong background */
 .intro-cinematic .intro-bg {
   position: absolute;
   inset: 0;
-  background: url('background.jpg') center/cover no-repeat;
-  opacity: 0.65;
+  background: url('hero.jpg') center/cover no-repeat;
+  opacity: 0.75;
   z-index: 0;
 }
 
-/* Horse overlay (your horse.png or stallion photo) */
+/* Subtle horse overlay */
 .intro-cinematic .intro-horse {
   position: absolute;
   inset: 0;
   background: url('horse.png') center/contain no-repeat;
-  opacity: 0.22;
+  opacity: 0.18;
   z-index: 1;
 }
 
-/* Strong dark overlay */
+/* Strong dark overlay for text readability */
 .intro-cinematic .intro-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.88);
   z-index: 2;
 }
 
-/* Text box */
+/* Text container */
 .intro-cinematic .intro-wrapper {
   position: relative;
   z-index: 3;
   max-width: 820px;
   margin: 0 auto;
-  padding: 65px 50px;
+  padding: 70px 55px;
   background: rgba(10, 10, 10, 0.95);
   border-radius: 20px;
   border: 1px solid rgba(194, 163, 107, 0.25);
@@ -282,26 +282,27 @@ body::before {
 
 /* Title */
 .intro-cinematic h1 {
-  font-size: 2.7rem;
+  font-size: 2.6rem;
   color: #fff;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 45px;
   letter-spacing: 1.5px;
+  line-height: 1.2;
 }
 
 /* Essay text */
 .intro-cinematic .intro-text p {
   font-size: 1.13rem;
   line-height: 1.85;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
   color: #e8e0d0;
   text-align: justify;
 }
 
-/* Last paragraph with emoji */
+/* Final emoji */
 .intro-cinematic .intro-text p:last-child {
   text-align: center;
-  font-size: 2.1rem;
+  font-size: 2.2rem;
   margin-top: 50px;
   color: #C2A36B;
 }
