@@ -23,21 +23,40 @@ body::before {
 }
 
 
-/* ================= HERO (UNCHANGED) ================= */
+/* ================= HERO (3D GLASS UPGRADE) ================= */
 
 .hero {
   position: relative;
   width: 90%;
   max-width: 1200px;
   height: 85vh;
-  margin: 30px auto;
-  border-radius: 16px;
+  margin: 40px auto;
+
+  border-radius: 20px;
   overflow: hidden;
+
+  background: rgba(20,20,20,0.25);
+  backdrop-filter: blur(12px);
+
   box-shadow:
-    0 40px 100px rgba(0,0,0,0.9),
-    0 10px 40px rgba(0,0,0,0.6);
+    0 50px 120px rgba(0,0,0,0.95),
+    0 20px 40px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+
+  transform: perspective(1200px) translateY(0);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+/* HOVER FLOAT */
+.hero:hover {
+  transform: perspective(1200px) translateY(-6px) scale(1.01);
+
+  box-shadow:
+    0 70px 140px rgba(0,0,0,1),
+    0 30px 60px rgba(0,0,0,0.7);
+}
+
+/* HERO IMAGE */
 .hero-img {
   position: absolute;
   inset: 0;
@@ -47,6 +66,7 @@ body::before {
   object-position: center top;
 }
 
+/* OVERLAY */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -59,6 +79,41 @@ body::before {
   );
 }
 
+/* GLASS EDGE LIGHT */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+
+  border: 1px solid rgba(255,255,255,0.06);
+
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.08),
+    transparent 40%,
+    transparent 60%,
+    rgba(255,255,255,0.05)
+  );
+
+  pointer-events: none;
+}
+
+/* HERO GLOW */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+
+  box-shadow:
+    0 0 80px rgba(194,163,107,0.12),
+    0 0 20px rgba(194,163,107,0.08);
+
+  pointer-events: none;
+}
+
+/* CONTENT */
 .hero-content {
   position: absolute;
   top: 50%;
@@ -120,18 +175,8 @@ body::before {
   color: #C2A36B;
 }
 
-/* HERO GLOW */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  box-shadow: 0 0 60px rgba(194,163,107,0.08);
-  pointer-events: none;
-}
 
-
-/* ================= ARTICLES ================= */
+/* ================= ARTICLES (FINAL CINEMATIC BLOCK) ================= */
 
 .articles-section {
   position: relative;
@@ -161,53 +206,49 @@ body::before {
   z-index: 1;
 }
 
-/* MAIN CONTAINER */
-.articles-container {
+/* MASTER GLASS BOX */
+.articles-wrapper {
   position: relative;
   z-index: 2;
-  max-width: 1000px;
+
+  max-width: 1050px;
   margin: auto;
-  text-align: center;
-}
 
-/* TITLE */
-.articles-title {
-  color: #C2A36B;
-  font-size: 34px;
-  margin-bottom: 50px;
-  letter-spacing: 2px;
-}
+  padding: 80px 60px;
 
-/* ===== BIG GLASS BLOCK ===== */
+  border-radius: 24px;
 
-.articles-single {
-  background: rgba(10,10,10,0.75);
-  backdrop-filter: blur(12px);
-
-  border-radius: 20px;
-  padding: 60px;
+  background: rgba(10,10,10,0.65);
+  backdrop-filter: blur(14px);
 
   border: 1px solid rgba(194,163,107,0.25);
 
   box-shadow:
-    0 40px 100px rgba(0,0,0,0.9),
-    0 0 40px rgba(194,163,107,0.08);
+    0 50px 120px rgba(0,0,0,0.95),
+    0 0 60px rgba(194,163,107,0.08);
 }
 
-/* GRID INSIDE BLOCK */
+/* TITLE INSIDE BOX */
+.articles-title {
+  color: #C2A36B;
+  font-size: 34px;
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+/* GRID */
 .articles-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 50px;
 }
 
-/* EACH ITEM */
+/* ITEM */
 .article-item {
-  padding: 30px;
-  border-radius: 12px;
-
-  background: rgba(0,0,0,0.4);
-
+  padding: 35px;
+  border-radius: 14px;
+  background: rgba(0,0,0,0.45);
   transition: all 0.3s ease;
 }
 
@@ -221,32 +262,19 @@ body::before {
 .article-item p {
   color: #cfc7b8;
   font-size: 14px;
+  line-height: 1.6;
 }
 
 /* HOVER */
 .article-item:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   background: rgba(194,163,107,0.08);
 }
-/* ===== MASTER WRAPPER (THIS IS THE MAGIC) ===== */
 
-.articles-wrapper {
-  position: relative;
-  z-index: 2;
+.article-item:hover h3 {
+  letter-spacing: 1px;
+}
 
-  max-width: 1050px;
-  margin: auto;
-
-  padding: 70px 60px;
-
-  border-radius: 24px;
-
-  background: rgba(10,10,10,0.65);
-  backdrop-filter: blur(14px);
-
-  border: 1px solid rgba(194,163,107,0.25);
-
-  box-shadow:
-    0 50px 120px rgba(0,0,0,0.95),
-    0 0 60px rgba(194,163,107,0.08);
+.article-item:hover p {
+  color: #e6dfd2;
 }
