@@ -190,7 +190,7 @@ body::before {
 .intro-content {
   position: relative;
   z-index: 2;
-  max-width: 750px;
+  max-width: 650px;
   text-align: left;
 }
 
