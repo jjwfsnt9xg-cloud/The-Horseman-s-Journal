@@ -1,20 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Black Stallion | The Horseman Journal</title>
+  <style>
+    body { margin:0; padding:0; background:#0a0a0a; font-family: 'Georgia', serif; color:#e0e0e0; }
+    .intro-cinematic {
+      position: relative;
+      min-height: 100vh;
+      padding: 100px 20px 120px;
+      background: #0a0a0a;
+      overflow: hidden;
+    }
+    .intro-bg {
+      position: absolute;
+      inset: 0;
+      background: url('hero.jpg') center/cover no-repeat;
+      opacity: 0.78;
+      z-index: 0;
+    }
+    .intro-horse {
+      position: absolute;
+      inset: 0;
+      background: url('horse.png') center/contain no-repeat;
+      opacity: 0.20;
+      z-index: 1;
+    }
+    .intro-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 2;
+    }
+    .intro-wrapper {
+      position: relative;
+      z-index: 3;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 70px 55px;
+      background: rgba(10,10,10,0.95);
+      border-radius: 20px;
+      border: 1px solid rgba(194,163,107,0.25);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.9);
+    }
+    .intro-cinematic h1 {
+      font-size: 2.6rem;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 45px;
+      letter-spacing: 1.5px;
+      line-height: 1.2;
+    }
+    .intro-text p {
+      font-size: 1.13rem;
+      line-height: 1.85;
+      margin-bottom: 32px;
+      color: #e8e0d0;
+      text-align: justify;
+    }
+    .intro-text p:last-child {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-top: 50px;
+      color: #C2A36B;
+    }
+  </style>
+</head>
+<body>
+
 <section class="intro-cinematic">
-
-  <!-- Dark background -->
   <div class="intro-bg"></div>
-
-  <!-- Subtle horse overlay -->
   <div class="intro-horse"></div>
-
-  <!-- Dark overlay for readability -->
   <div class="intro-overlay"></div>
 
   <div class="intro-wrapper">
-
     <h1>The Black Stallion Who Whispered My Name in Hoofbeats</h1>
 
     <div class="intro-text">
-
       <p>I have lived eleven years among horses. Still, the world feels too small for me everywhere except in their shadow. Ordinary. Quiet. A heart that races—never quite falling below 120—like a drum that forgot how to rest.</p>
 
       <p>Shame has been my oldest companion, a low fog that clings to the skin. Disgust—first from voices outside, then echoing inside—has trailed me like dust after a long ride. I never quite fit in the places where people gather. I only ever felt the air become breathable when a horse stood near, ears flicking, eyes soft, breathing the same slow rhythm as the wind through dry grass.</p>
@@ -66,9 +129,9 @@
       <p>If you have read this far, thank you. It is not easy to write. It is not easy to live. But if any part of it touches something in you, stay. There is more.</p>
 
       <p style="text-align:center; margin-top:60px; font-size:2rem;">🖤🐴</p>
-
     </div>
-
   </div>
-
 </section>
+
+</body>
+</html>
