@@ -231,16 +231,18 @@ body::before {
   color: #cfc7b8;
 }
 
-/* ================= CINEMATIC INTRO FINAL ================= */
+/* ================= CINEMATIC INTRO SECTION ================= */
 
 .intro-cinematic {
   position: relative;
-  padding: 60px 20px; /* reduced from 120 → fixes gap */
   min-height: 100vh;
+  padding: 100px 20px 80px;
   overflow: hidden;
+  background: #0a0a0a;
 }
-/* BACKGROUND */
-.intro-bg {
+
+/* Dark background image */
+.intro-cinematic .intro-bg {
   position: absolute;
   inset: 0;
   background: url('background.jpg') center/cover no-repeat;
@@ -248,36 +250,57 @@ body::before {
   z-index: 0;
 }
 
-/* HORSE */
-.intro-horse {
+/* Subtle horse overlay */
+.intro-cinematic .intro-horse {
   position: absolute;
   inset: 0;
-  background: url('horse.png') center/contain no-repeat;
-  opacity: 0.35;
+  background: url('YOUR-HORSE-PHOTO-URL.jpg') center/contain no-repeat;
+  opacity: 0.25;
   z-index: 1;
 }
 
-/* OVERLAY (FIXED) */
-.intro-overlay {
+/* Dark overlay for readability */
+.intro-cinematic .intro-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0,0,0,0.75);
   z-index: 2;
 }
 
-/* TEXT BOX */
-.intro-wrapper {
+/* Text container */
+.intro-cinematic .intro-wrapper {
   position: relative;
   z-index: 3;
-  max-width: 850px;
-  margin: auto;
-  padding: 80px 60px;
-  background: rgba(0,0,0,0.6);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 60px 50px;
+  background: rgba(10,10,10,0.85);
   border-radius: 20px;
+  border: 1px solid rgba(194,163,107,0.2);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.9);
 }
 
-/* TEXT */
-.intro-text p {
+/* Title */
+.intro-cinematic h1 {
+  font-size: 2.8rem;
+  color: #fff;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+/* Body text */
+.intro-cinematic .intro-text p {
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: #e0e0e0;
   margin-bottom: 28px;
-  line-height: 2.1;
+  text-align: justify;
+}
+
+/* Final emoji */
+.intro-cinematic .intro-text p:last-child {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 40px;
 }
