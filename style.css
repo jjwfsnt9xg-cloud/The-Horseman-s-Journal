@@ -231,7 +231,6 @@ body::before {
   color: #cfc7b8;
 }
 
-
 /* ================= CINEMATIC INTRO FINAL ================= */
 
 .intro-cinematic {
@@ -245,7 +244,7 @@ body::before {
   position: absolute;
   inset: 0;
   background: url('background.jpg') center/cover no-repeat;
-  opacity: 0.4;
+  opacity: 0.6;
   z-index: 0;
 }
 
@@ -254,7 +253,7 @@ body::before {
   position: absolute;
   inset: 0;
   background: url('horse.png') center/contain no-repeat;
-  opacity: 0.15;
+  opacity: 0.35;
   z-index: 1;
 }
 
@@ -262,7 +261,7 @@ body::before {
 .intro-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0,0,0,0.45);
   z-index: 2;
 }
 
