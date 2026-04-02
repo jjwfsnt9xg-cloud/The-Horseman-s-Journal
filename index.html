@@ -1,87 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>The Horseman</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Horsemen</title> <!-- corrected title -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-<!-- ================= HERO SECTION ================= -->
-<section class="hero">
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero" aria-label="Hero — The Horsemen">
+    <!-- Decorative image: include descriptive alt for accessibility -->
+    <img src="hero.jpg" class="hero-img" alt="A black stallion running across dark ground" />
 
-  <div class="nav">
-    <a href="index.html">Home</a>
-    <a href="#">Stories</a>
-    <a href="#">Gallery</a>
-    <a href="#">Contact</a>
-  </div>
+    <!-- overlay for readability -->
+    <div class="hero-overlay" aria-hidden="true"></div>
 
-  <img src="hero.jpg" class="hero-img" alt="Horse Hero Image">
-  <div class="hero-overlay"></div>
+    <!-- top-right nav -->
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="stories.html">Stories</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-  <div class="hero-content">
-    <h1>THE HORSEMEN</h1>
+    <!-- centered content -->
+    <div class="hero-content">
+      <h1 class="hero-title">THE HORSEMEN</h1>
 
-    <p class="author">Praveen Kumar</p>
+      <div class="author">Praveen Kumar</div>
 
-    <p class="quote">
-      “A fragile human outside.<br>
-      A horse inside.”
-    </p>
+      <blockquote class="quote" aria-label="featured quote">
+        “A fragile human outside.<br />
+        A horse inside.”
+      </blockquote>
 
-    <p class="context">
-      Eleven years of learning trust from horses —
-      and from one black stallion who changed everything.
-    </p>
+      <p class="context">
+        Eleven years of learning trust from horses — and from one black stallion who changed everything.
+      </p>
 
-    <!-- ✅ FIX: BUTTON INSIDE HERO -->
-    <a href="intro.html" class="enter-story">
-      Enter the Story
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- ================= ARTICLES SECTION ================= -->
-<section class="articles-section">
-
-  <div class="articles-bg"></div>
-
-  <div class="articles-wrapper">
-
-    <h2 class="articles-title">Journal Articles</h2>
-
-    <div class="articles-grid">
-
-      <div class="article-item">
-        <h3>Prey Psychology</h3>
-        <p>Understanding how horses perceive fear, pressure, and safety.</p>
-      </div>
-
-      <div class="article-item">
-        <h3>Reading Horses</h3>
-        <p>Learning to observe subtle signals beyond movement and behavior.</p>
-      </div>
-
-      <div class="article-item">
-        <h3>Trust Building</h3>
-        <p>How consistency creates a bond deeper than control.</p>
-      </div>
-
-      <div class="article-item">
-        <h3>Communication</h3>
-        <p>Not taught — felt through presence, timing, and awareness.</p>
-      </div>
-
+      <a href="intro.html" class="enter-story" aria-label="Enter the story">Enter the story</a>
     </div>
+  </section>
 
-  </div>
+  <!-- ================= ARTICLES SECTION ================= -->
+  <section class="articles-section" aria-labelledby="articles-heading">
+    <div class="articles-bg" aria-hidden="true"></div>
 
-</section>
+    <div class="articles-wrapper">
+      <h2 id="articles-heading" class="articles-title">Journal Articles</h2>
+
+      <div class="articles-grid">
+        <article class="article-item" aria-labelledby="a1">
+          <h3 id="a1">Prey Psychology</h3>
+          <p>Understanding how horses perceive fear, pressure, and safety.</p>
+        </article>
+
+        <article class="article-item" aria-labelledby="a2">
+          <h3 id="a2">Reading Horses</h3>
+          <p>Learning to observe subtle signals beyond movement and behavior.</p>
+        </article>
+
+        <article class="article-item" aria-labelledby="a3">
+          <h3 id="a3">Trust Building</h3>
+          <p>How consistency creates a bond deeper than control.</p>
+        </article>
+
+        <article class="article-item" aria-labelledby="a4">
+          <h3 id="a4">Communication</h3>
+          <p>Not taught — felt through presence, timing, and awareness.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>
