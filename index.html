@@ -1,116 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>The Horseman</title> <!-- corrected title -->
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>The Horseman</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- ================= HERO SECTION ================= -->
-  <section class="hero" aria-label="Hero — The Horseman">
-    <!-- Decorative image: include descriptive alt for accessibility -->
-    <img src="hero.jpg" class="hero-img" alt="A black stallion running across dark ground" />
+<!-- ================= HERO ================= -->
+<section class="hero">
 
-    <!-- overlay for readability -->
-    <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="nav">
+    <a href="#">Home</a>
+    <a href="#">Stories</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact</a>
+  </div>
 
-    <!-- top-right nav -->
-    <nav class="nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="stories.html">Stories</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <!-- HERO IMAGE (FIXED) -->
+  <img src="hero.jpg" class="hero-img" alt="Horse">
 
-    <!-- centered content -->
-    <div class="hero-content">
-      <h1 class="hero-title">THE HORSEMAN</h1>
+  <div class="hero-overlay"></div>
 
-      <div class="author">Praveen Kumar</div>
+  <div class="hero-content">
+    <h1>THE HORSEMEN</h1>
 
-      <blockquote class="quote" aria-label="featured quote">
-        “A fragile human outside.<br />
-        A horse inside.”
-      </blockquote>
+    <p class="author">Praveen Kumar</p>
 
-      <p class="context">
-        Eleven years of learning trust from horses — and from one black stallion who changed everything.
-      </p>
+    <p class="quote">
+      “A fragile human outside.<br>
+      A horse inside.”
+    </p>
 
-      <a href="intro" class="enter-story" aria-label="Enter the story">Enter the story</a>
-    </div>
-  </section>
+    <p class="context">
+      Eleven years of learning trust from horses —
+      and from one black stallion who changed everything.
+    </p>
 
- <!-- ================= INTRO PART 1 ================= -->
-<section class="intro-block">
-
-  <div class="intro-bg" style="background-image: url('horse.png');"></div>
-  <div class="intro-overlay"></div>
-
-  <div class="intro-content">
-    <h1>The Black Stallion Who Whispered My Name in Hoofbeats</h1>
-
-    <p>I have lived eleven years among horses.</p>
-
-    <p>Still the world feels too small for me everywhere except in their shadow.</p>
-
-    <p>Ordinary. Quiet. A heart that races — never quite falling below 120 — like a drum that forgot how to rest.</p>
+    <!-- SCROLL BUTTON -->
+    <a href="#intro" class="enter-story">Enter the Story</a>
   </div>
 
 </section>
 
 
-<!-- ================= INTRO PART 2 ================= -->
-<section class="intro-block">
+<!-- ================= INTRO (OVER IMAGE) ================= -->
+<section id="intro" class="intro-cinematic">
 
-  <div class="intro-bg" style="background-image: url('horse2.jpg');"></div>
+  <!-- YOUR HORSE IMAGE -->
+  <div class="intro-bg"></div>
+
+  <!-- DARK OVERLAY -->
   <div class="intro-overlay"></div>
 
-  <div class="intro-content">
+  <div class="intro-wrapper">
 
-    <p>Shame has been my oldest companion, a low fog that clings to the skin.</p>
+    <h1>The Black Stallion Who Whispered My Name in Hoofbeats</h1>
 
-    <p>Disgust—first from voices outside, then echoing inside—has trailed me like dust after a long ride.</p>
+    <div class="intro-text">
 
-    <p>I never quite fit in the places where people gather.</p>
+      <p>
+        I have lived eleven years among horses. Still, the world feels too small for me everywhere except in their shadow. Ordinary. Quiet. A heart that races—never quite falling below 120—like a drum that forgot how to rest.
+      </p>
 
-    <p>I only ever felt the air become breathable when a horse stood near.</p>
+      <p>
+        Shame has been my oldest companion, a low fog that clings to the skin. Disgust—first from voices outside, then echoing inside—has trailed me like dust after a long ride. I never quite fit in the places where people gather.
+      </p>
+
+      <p>
+        I only ever felt the air become breathable when a horse stood near—ears flicking, eyes soft, breathing the same slow rhythm as the wind through dry grass.
+      </p>
+
+      <p>🐎</p>
+
+    </div>
 
   </div>
 
-</section>  <!-- ================= ARTICLES SECTION ================= -->
-  <section class="articles-section" aria-labelledby="articles-heading">
-    <div class="articles-bg" aria-hidden="true"></div>
+</section>
 
-    <div class="articles-wrapper">
-      <h2 id="articles-heading" class="articles-title">Journal Articles</h2>
 
-      <div class="articles-grid">
-        <article class="article-item" aria-labelledby="a1">
-          <h3 id="a1">Prey Psychology</h3>
-          <p>Understanding how horses perceive fear, pressure, and safety.</p>
-        </article>
+<!-- ================= ARTICLES ================= -->
+<section class="articles-section">
 
-        <article class="article-item" aria-labelledby="a2">
-          <h3 id="a2">Reading Horses</h3>
-          <p>Learning to observe subtle signals beyond movement and behavior.</p>
-        </article>
+  <div class="articles-bg"></div>
 
-        <article class="article-item" aria-labelledby="a3">
-          <h3 id="a3">Trust Building</h3>
-          <p>How consistency creates a bond deeper than control.</p>
-        </article>
+  <div class="articles-wrapper">
 
-        <article class="article-item" aria-labelledby="a4">
-          <h3 id="a4">Communication</h3>
-          <p>Not taught — felt through presence, timing, and awareness.</p>
-        </article>
+    <h2 class="articles-title">Journal Articles</h2>
+
+    <div class="articles-grid">
+
+      <div class="article-item">
+        <h3>Prey Psychology</h3>
+        <p>Understanding how horses perceive fear, pressure, and safety.</p>
       </div>
+
+      <div class="article-item">
+        <h3>Reading Horses</h3>
+        <p>Learning to observe subtle signals beyond movement and behavior.</p>
+      </div>
+
+      <div class="article-item">
+        <h3>Trust Building</h3>
+        <p>How consistency creates a bond deeper than control.</p>
+      </div>
+
+      <div class="article-item">
+        <h3>Communication</h3>
+        <p>Not taught — felt through presence, timing, and awareness.</p>
+      </div>
+
     </div>
-  </section>
+
+  </div>
+
+</section>
 
 </body>
 </html>
