@@ -232,78 +232,76 @@ body::before {
 }
 
 
-/* ================= INTRO PAGE (FINAL FIXED) ================= */
+/* ================= CINEMATIC INTRO ================= */
 
-.intro {
-  max-width: 820px;
-  margin: 120px auto;
-  padding: 0 20px;
-
+.intro-cinematic {
   position: relative;
+  min-height: 100vh;
+  padding: 120px 20px;
+  overflow: hidden;
 }
 
-/* BACKGROUND DEPTH */
-.intro::before {
-  content: "";
-  position: fixed;
+/* BACKGROUND */
+.intro-bg {
+  position: absolute;
   inset: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(0,0,0,0.4),
-    rgba(0,0,0,0.9)
-  );
-  z-index: -1;
+  background: url('background.jpg') center/cover no-repeat;
+  filter: brightness(0.35);
+  z-index: 0;
+}
+
+/* HORSE IMAGE */
+.intro-horse {
+  position: absolute;
+  inset: 0;
+  background: url('horse.png') center/contain no-repeat;
+
+  opacity: 0.25;
+  mix-blend-mode: lighten;
+
+  z-index: 1;
+}
+
+/* DARK OVERLAY */
+.intro-cinematic::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
+  z-index: 2;
+}
+
+/* TEXT BOX */
+.intro-wrapper {
+  position: relative;
+  z-index: 3;
+
+  max-width: 850px;
+  margin: auto;
+
+  padding: 80px 60px;
+
+  background: rgba(10,10,10,0.6);
+  backdrop-filter: blur(12px);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 40px 100px rgba(0,0,0,0.9),
+    0 0 40px rgba(194,163,107,0.08);
 }
 
 /* TITLE */
-.intro h1 {
-  font-size: 44px;
-  margin-bottom: 70px;
+.intro-wrapper h1 {
   text-align: center;
-
-  text-shadow:
-    0 6px 30px rgba(0,0,0,0.9),
-    0 0 20px rgba(194,163,107,0.15);
+  font-size: 40px;
+  margin-bottom: 40px;
 }
 
 /* TEXT */
-.intro p {
+.intro-text p {
   font-size: 17px;
   line-height: 2;
-
-  margin: 0 auto 28px;
-  max-width: 700px;
-
-  text-align: left;
-}
-
-/* BLOCKS */
-.intro-block {
-  margin-bottom: 80px;
-
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.8s ease forwards;
-}
-
-/* NATURAL FLOW ANIMATION */
-.intro-block:nth-child(odd) {
-  animation-delay: 0.2s;
-}
-
-.intro-block:nth-child(even) {
-  animation-delay: 0.4s;
-}
-
-/* EMPHASIS */
-.intro em {
-  color: #C2A36B;
-}
-
-/* ANIMATION */
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  margin-bottom: 24px;
+  color: #e6dfd2;
 }
