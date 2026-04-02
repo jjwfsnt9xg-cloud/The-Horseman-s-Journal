@@ -232,7 +232,7 @@ body::before {
 }
 
 
-/* ================= CINEMATIC INTRO FINAL FIX ================= */
+/* ================= CINEMATIC INTRO FINAL ================= */
 
 .intro-cinematic {
   position: relative;
@@ -245,7 +245,7 @@ body::before {
 .intro-bg {
   position: absolute;
   inset: 0;
-  background: url('./background.jpg') center/cover no-repeat;
+  background: url('background.jpg') center/cover no-repeat;
   opacity: 0.4;
   z-index: 0;
 }
@@ -254,21 +254,20 @@ body::before {
 .intro-horse {
   position: absolute;
   inset: 0;
-  background: url('./horse.png') center/contain no-repeat;
+  background: url('horse.png') center/contain no-repeat;
   opacity: 0.15;
   z-index: 1;
 }
 
-/* DARK OVERLAY */
-.intro-cinematic::before {
-  content: "";
+/* OVERLAY (FIXED) */
+.intro-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.75);
   z-index: 2;
 }
 
-/* TEXT */
+/* TEXT BOX */
 .intro-wrapper {
   position: relative;
   z-index: 3;
@@ -279,6 +278,7 @@ body::before {
   border-radius: 20px;
 }
 
+/* TEXT */
 .intro-text p {
   margin-bottom: 28px;
   line-height: 2.1;
