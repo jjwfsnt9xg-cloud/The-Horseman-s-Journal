@@ -19,19 +19,19 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(0,0,0,0.6), rgba(0,0,0,0.9));
+  background: radial-gradient(circle at center, rgba(0,0,0,0.6), rgba(0,0,0,0.92));
   z-index: -1;
 }
 
 
-/* ================= HERO (3D GLASS) ================= */
+/* ================= HERO ================= */
 
 .hero {
   position: relative;
   width: 90%;
-  max-width: 1200px;
+  max-width: 1300px;
   height: 85vh;
-  margin: 40px auto 10px;
+  margin: 40px auto;
 
   border-radius: 20px;
   overflow: hidden;
@@ -49,7 +49,7 @@ body::before {
 }
 
 .hero:hover {
-  transform: perspective(1200px) translateY(-8px) scale(1.015);
+  transform: perspective(1200px) translateY(-6px) scale(1.01);
 }
 
 /* IMAGE */
@@ -59,28 +59,31 @@ body::before {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.85) contrast(1.1);
+  filter: brightness(0.88) contrast(1.05);
+  z-index: 0;
 }
 
-/* OVERLAY (FIXED FOR READABILITY) */
+/* OVERLAY */
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(0,0,0,0.85) 25%,
-    rgba(0,0,0,0.6) 55%,
-    rgba(0,0,0,0.25) 100%
+    rgba(0,0,0,0.88) 25%,
+    rgba(0,0,0,0.65) 55%,
+    rgba(0,0,0,0.3) 100%
   );
+  z-index: 1;
 }
 
-/* GLASS EDGE */
+/* BORDER EDGE */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 20px;
   border: 1px solid rgba(255,255,255,0.08);
+  z-index: 2;
 }
 
 /* CONTENT */
@@ -89,17 +92,21 @@ body::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: min(90%, 850px);
   text-align: center;
-  z-index: 2;
+  z-index: 3;
 }
 
+/* TITLE (FIXED RESPONSIVE + ALIGNMENT) */
 .hero-content h1 {
-  font-size: 60px;
+  font-size: clamp(42px, 6vw, 72px);
   letter-spacing: 3px;
-  margin-bottom: 10px;
-  text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  margin-bottom: 12px;
+  line-height: 1.05;
+  text-shadow: 0 15px 40px rgba(0,0,0,0.9);
 }
 
+/* AUTHOR */
 .author {
   color: #C2A36B;
   margin-bottom: 15px;
@@ -107,23 +114,32 @@ body::before {
   letter-spacing: 2px;
 }
 
+/* QUOTE */
 .quote {
-  font-size: 20px;
+  font-size: clamp(16px, 2vw, 22px);
   margin-bottom: 20px;
-  opacity: 0.9;
+  line-height: 1.5;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* CONTEXT (FIXED WIDTH + BALANCE) */
 .context {
-  font-size: 14px;
+  font-size: clamp(14px, 1.5vw, 16px);
   color: #bfb8aa;
+  max-width: 650px;
+  margin: 0 auto 25px;
+  line-height: 1.6;
 }
 
-/* NAV (FIXED VISIBILITY) */
+
+/* NAV */
 .nav {
   position: absolute;
   top: 20px;
   right: 40px;
-  z-index: 3;
+  z-index: 4;
 
   background: rgba(0,0,0,0.35);
   padding: 8px 14px;
@@ -144,12 +160,11 @@ body::before {
 }
 
 
-/* ================= ENTER STORY BUTTON ================= */
+/* ================= BUTTON ================= */
 
 .enter-story {
-  display: block;
-  width: fit-content;
-  margin: 25px auto 80px;
+  display: inline-block;
+  margin-top: 15px;
 
   padding: 13px 30px;
 
@@ -188,6 +203,7 @@ body::before {
   inset: 0;
   background: url('articles-bg.jpg') center/cover no-repeat;
   filter: brightness(0.6);
+  z-index: 0;
 }
 
 .articles-section::before {
@@ -195,6 +211,7 @@ body::before {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.9);
+  z-index: 1;
 }
 
 .articles-wrapper {
@@ -253,7 +270,7 @@ body::before {
 }
 
 
-/* ================= BLACK STALLION ESSAY ================= */
+/* ================= ESSAY PAGE ================= */
 
 .intro-cinematic {
   position: relative;
@@ -263,7 +280,6 @@ body::before {
   overflow: hidden;
 }
 
-/* Background */
 .intro-cinematic .intro-bg {
   position: absolute;
   inset: 0;
@@ -271,7 +287,6 @@ body::before {
   opacity: 0.7;
 }
 
-/* Horse overlay */
 .intro-cinematic .intro-horse {
   position: absolute;
   inset: 0;
@@ -279,14 +294,12 @@ body::before {
   opacity: 0.15;
 }
 
-/* Overlay */
 .intro-cinematic .intro-overlay {
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at center, rgba(0,0,0,0.85), #000);
 }
 
-/* Text container */
 .intro-cinematic .intro-wrapper {
   position: relative;
   z-index: 3;
@@ -302,16 +315,13 @@ body::before {
   box-shadow: 0 50px 120px rgba(0,0,0,0.95);
 }
 
-/* Title */
 .intro-cinematic h1 {
   font-size: 2.7rem;
   color: #fff;
   text-align: center;
   margin-bottom: 50px;
-  line-height: 1.2;
 }
 
-/* Text */
 .intro-cinematic .intro-text p {
   font-size: 1.1rem;
   line-height: 1.9;
@@ -320,10 +330,30 @@ body::before {
   text-align: justify;
 }
 
-/* Ending */
 .intro-cinematic .intro-text p:last-child {
   text-align: center;
   font-size: 2rem;
   margin-top: 50px;
   color: #C2A36B;
+}
+
+
+/* ================= MOBILE FIX ================= */
+
+@media (max-width: 900px) {
+  .hero {
+    height: 70vh;
+  }
+
+  .articles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(32px, 8vw, 52px);
+  }
+
+  .intro-cinematic .intro-wrapper {
+    padding: 40px 25px;
+  }
 }
