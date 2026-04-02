@@ -207,8 +207,9 @@ body::before {
 }
 
 /* SLIGHT VARIATION */
-.journal-page:nth-child(even) {
-  transform: rotate(1deg);
+.journal-page:nth-child(2) {
+  background: url('journal2.png') center/cover no-repeat;
+}  transform: rotate(1deg);
 }
 
 /* TEXT */
