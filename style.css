@@ -1,24 +1,39 @@
 /* ================= GLOBAL ================= */
 
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Georgia', serif;
-  color: #F4EFE6;
-  scroll-behavior: smooth;
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@400;700&display=swap');
+
+:root{
+  --gold: #C2A36B;
+  --ivory: #F4EFE6;
+  --paper: #F5ECD9;
+  --dark-strong: rgba(0,0,0,0.9);
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif; /* keep the serif you prefer */
+  color: var(--ivory);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* page background */
 body {
   background: url('background.jpg') no-repeat center center/cover;
   background-attachment: fixed;
   background-color: #0a0a0a;
 }
 
+/* subtle global vignette to keep text readable */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(0,0,0,0.6), rgba(0,0,0,0.92));
+  pointer-events: none;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.45), rgba(0,0,0,0.92));
   z-index: -1;
 }
 
@@ -34,52 +49,64 @@ body::before {
   border-radius: 20px;
   overflow: hidden;
 
-  background: rgba(20,20,20,0.25);
-  backdrop-filter: blur(14px);
+  /* light glass so hero image is visible behind it */
+  background: rgba(0,0,0,0.12);
+  backdrop-filter: blur(12px);
 
   box-shadow:
     0 60px 140px rgba(0,0,0,0.95),
-    0 25px 50px rgba(0,0,0,0.7),
-    inset 0 1px 0 rgba(255,255,255,0.08);
+    0 25px 50px rgba(0,0,0,0.65),
+    inset 0 1px 0 rgba(255,255,255,0.04);
 
-  transition: 0.4s ease;
+  will-change: transform; /* avoid repaint flicker */
+  transition: transform 0.36s ease, box-shadow 0.36s ease;
 }
 
+/* remove the problematic 3D perspective + scale that caused blink on some browsers */
 .hero:hover {
-  transform: translateY(-6px) scale(1.01);
+  transform: translateY(-6px);
+  box-shadow:
+    0 70px 160px rgba(0,0,0,1),
+    0 30px 60px rgba(0,0,0,0.7);
 }
 
+/* hero image */
 .hero-img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.95) contrast(1.1);
+  object-position: center;
   z-index: 0;
+  filter: brightness(0.95) contrast(1.05);
 }
 
+/* overlay used to darken left -> right for readability */
 .hero-overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(
     to right,
-    rgba(0,0,0,0.85) 25%,
-    rgba(0,0,0,0.6) 55%,
+    rgba(0,0,0,0.85) 22%,
+    rgba(0,0,0,0.58) 50%,
     rgba(0,0,0,0.25) 100%
   );
-  z-index: 1;
 }
 
+/* glass edge highlight */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.06);
+  pointer-events: none;
   z-index: 2;
 }
 
+/* hero content sits above overlays */
 .hero-content {
   position: absolute;
   top: 50%;
@@ -90,39 +117,44 @@ body::before {
   z-index: 3;
 }
 
+/* responsive hero typography */
 .hero-content h1 {
   font-size: clamp(42px, 6vw, 72px);
   letter-spacing: 3px;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
   line-height: 1.05;
-  text-shadow: 0 15px 40px rgba(0,0,0,0.9);
+  color: var(--ivory);
+  text-shadow: 0 15px 40px rgba(0,0,0,0.85);
 }
 
 .author {
-  color: #C2A36B;
-  margin-bottom: 15px;
+  display: block;
+  color: var(--gold);
+  margin-bottom: 12px;
   font-size: 13px;
   letter-spacing: 2px;
 }
 
 .quote {
   font-size: clamp(16px, 2vw, 22px);
-  margin-bottom: 20px;
-  line-height: 1.5;
+  margin-bottom: 18px;
+  color: #e6dfd2;
+  line-height: 1.4;
 }
 
 .context {
-  font-size: clamp(14px, 1.5vw, 16px);
+  font-size: clamp(14px, 1.4vw, 15px);
   color: #bfb8aa;
-  margin-bottom: 25px;
+  margin-bottom: 22px;
 }
 
+/* nav inside hero */
 .nav {
   position: absolute;
   top: 20px;
   right: 40px;
   z-index: 4;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0,0,0,0.28);
   padding: 8px 14px;
   border-radius: 8px;
 }
@@ -130,108 +162,104 @@ body::before {
 .nav a {
   margin-left: 18px;
   text-decoration: none;
-  color: #ccc;
+  color: #d0c9bf;
+  font-size: 14px;
 }
+.nav a:hover { color: var(--gold); }
 
-.nav a:hover {
-  color: #C2A36B;
-}
-
-
-/* ================= BUTTON (FIXED NOT BLUE) ================= */
-
+/* enter button */
 .enter-story {
   display: inline-block;
-  margin-top: 15px;
-  padding: 13px 30px;
-
+  margin-top: 12px;
+  padding: 12px 30px;
   font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;
-
-  color: #C2A36B;
+  color: var(--gold);
   border: 1px solid rgba(194,163,107,0.5);
-
   text-decoration: none;
-  background: rgba(0,0,0,0.4);
-
-  transition: 0.3s;
+  background: rgba(0,0,0,0.36);
+  transition: background 0.25s ease, color 0.25s ease;
+  z-index: 4;
 }
-
 .enter-story:hover {
-  background: #C2A36B;
+  background: var(--gold);
   color: #121212;
 }
 
 
-/* ================= INTRO BOOK STYLE ================= */
+/* ================= INTRO / JOURNAL (CINEMATIC) ================= */
 
 .intro-cinematic {
   position: relative;
-  padding: 150px 20px;
+  min-height: 140vh; /* allows the long text to scroll */
+  padding: 140px 20px;
+  overflow: hidden;
 }
 
-/* HORSE BACKGROUND */
+/* horse image for the intro: placed as background (large, subtle) */
 .intro-bg {
-  position: fixed;
+  position: absolute;
   inset: 0;
   background: url('horse.png') center/cover no-repeat;
-  z-index: -2;
+  filter: brightness(0.6) saturate(0.9);
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* DARK FADE FOR READABILITY */
-.intro-cinematic::before {
-  content: "";
-  position: fixed;
+/* light gradient overlay on top of the horse image for readability */
+.intro-overlay {
+  position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
-  z-index: -1;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.28), rgba(0,0,0,0.55));
+  z-index: 1;
+  pointer-events: none;
 }
 
-/* JOURNAL PAGE */
-.journal-page {
+/* the readable paper/journal box centered on page */
+.intro-wrapper {
+  position: relative;
+  z-index: 2;
   max-width: 750px;
-  margin: 80px auto;
-  padding: 60px 55px;
-
-  background: url('journal-page.png') center/cover no-repeat;
-  background-color: #f5ecd9;
-
-  border-radius: 10px;
-
+  margin: 0 auto;
+  padding: 80px 70px;
+  background: url('journal.png') center/cover no-repeat;
+  background-color: var(--paper);
+  border-radius: 12px;
   box-shadow:
-    0 30px 80px rgba(0,0,0,0.7),
-    inset 0 0 40px rgba(0,0,0,0.15);
-
-  transform: rotate(-1deg);
+    0 40px 100px rgba(0,0,0,0.85),
+    inset 0 0 40px rgba(0,0,0,0.08);
 }
 
-/* SLIGHT VARIATION */
-.journal-page:nth-child(2) {
-  background: url('journal2.png') center/cover no-repeat;
-}  transform: rotate(1deg);
-}
-
-/* TEXT */
-.journal-page h1 {
+/* title inside journal */
+.intro-wrapper h1 {
+  color: #2b2b2b;
+  font-size: 2.4rem;
+  margin: 0 0 36px;
   text-align: center;
-  color: #2a1f14;
-  margin-bottom: 40px;
+  line-height: 1.1;
 }
 
-.journal-page p {
-  color: #3a2f24;
-  line-height: 1.9;
-  margin-bottom: 22px;
+/* main text (keeps full length of intro and reads like a book) */
+.intro-text p {
+  color: #3a352c;
   font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 26px;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
-/* END SYMBOL */
-.ending {
+/* last paragraph / symbol styling */
+.intro-text p:last-child {
   text-align: center;
-  font-size: 2rem;
-  margin-top: 40px;
+  font-size: 1.4rem;
+  color: #8b6b3f;
+  margin-top: 36px;
 }
+
+
 /* ================= ARTICLES ================= */
 
 .articles-section {
@@ -244,13 +272,14 @@ body::before {
   inset: 0;
   background: url('articles-bg.jpg') center/cover no-repeat;
   filter: brightness(0.6);
+  z-index: 0;
 }
-
 .articles-section::before {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.9);
+  z-index: 1;
 }
 
 .articles-wrapper {
@@ -263,6 +292,13 @@ body::before {
   background: rgba(10,10,10,0.75);
 }
 
+.articles-title {
+  color: var(--gold);
+  font-size: 34px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
 .articles-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -273,90 +309,25 @@ body::before {
   padding: 35px;
   border-radius: 14px;
   background: rgba(15,15,15,0.7);
+  transition: transform .28s ease;
 }
-
-.article-item:hover {
-  transform: translateY(-8px);
-}
+.article-item:hover { transform: translateY(-8px); }
+.article-item h3 { color: var(--gold); }
+.article-item p { color: #cfc7b8; }
 
 
 /* ================= MOBILE ================= */
 
 @media (max-width: 900px) {
-  .hero {
-    height: 70vh;
-  }
-
-  .articles-grid {
-    grid-template-columns: 1fr;
-  }
-}
-/* ================= FINAL INTRO (JOURNAL) ================= */
-
-.intro-cinematic {
-  position: relative;
-  min-height: 140vh;
-  padding: 140px 20px;
-  overflow: hidden;
+  .hero { height: 70vh; margin: 30px auto; }
+  .hero-content h1 { font-size: clamp(34px, 9vw, 44px); }
+  .articles-grid { grid-template-columns: 1fr; gap: 26px; }
+  .intro-wrapper { padding: 40px 28px; margin: 40px 12px; }
+  .intro-text p { font-size: 1rem; line-height: 1.8; }
 }
 
-/* BACKGROUND HORSE */
-.intro-bg {
-  position: absolute;
-  inset: 0;
-  background: url('horse.png') center/cover no-repeat;
-  z-index: 0;
-}
-
-/* LIGHT OVERLAY */
-.intro-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.3),
-    rgba(0,0,0,0.5)
-  );
-  z-index: 1;
-}
-
-/* JOURNAL PAGE */
-.intro-wrapper {
-  position: relative;
-  z-index: 2;
-  max-width: 750px;
-  margin: 0 auto;
-  padding: 80px 70px;
-
-  background: url('journal.png') center/cover no-repeat;
-
-  border-radius: 12px;
-
-  box-shadow:
-    0 40px 100px rgba(0,0,0,0.8),
-    inset 0 0 40px rgba(0,0,0,0.15);
-}
-
-/* TITLE */
-.intro-cinematic h1 {
-  color: #2b2b2b;
-  font-size: 2.6rem;
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-/* TEXT */
-.intro-text p {
-  color: #3a352c;
-  font-size: 1.1rem;
-  line-height: 1.9;
-  margin-bottom: 28px;
-  text-align: justify;
-}
-
-/* FINAL SYMBOL */
-.intro-text p:last-child {
-  text-align: center;
-  font-size: 2rem;
-  color: #8b6b3f;
+/* small accessibility / print tweaks */
+@media print {
+  body { background: #fff; color: #000; }
+  .intro-wrapper { box-shadow: none; background: #fff; }
 }
