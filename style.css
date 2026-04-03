@@ -190,22 +190,7 @@ body::before {
 
 /* ================= INTRO / JOURNAL (CINEMATIC) ================= */
 
-.intro-wrapper {
-  position: relative;
-  z-index: 2;
-  max-width: 750px;
-  margin: 80px auto;
-  padding: 80px 70px;
-
-  background: url('journal.png') center/cover no-repeat;
-  background-color: #f5ecd9; /* ✅ fallback color */
-
-  border-radius: 12px;
-
-  box-shadow:
-    0 40px 100px rgba(0,0,0,0.85),
-    inset 0 0 40px rgba(0,0,0,0.08);
-}
+.intro-cinematic { position: relative; min-height: 140vh; /* allows the long text to scroll */ padding: 140px 20px; overflow: hidden;}
 
 /* horse image for the intro: placed as background (large, subtle) */
 .intro-bg {
