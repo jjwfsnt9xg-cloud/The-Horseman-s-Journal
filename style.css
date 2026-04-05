@@ -68,65 +68,104 @@ body {
 }
 
 
-/* ================= INTRO ================= */
-
+/* ================= INTRO CINEMATIC ================= */
 .intro-cinematic {
   position: relative;
-  padding: 120px 20px;
+  padding: 140px 20px 100px;
+  overflow: hidden;
 }
 
 .intro-bg {
   position: absolute;
   inset: 0;
   background: url('horse.png') center/cover no-repeat;
-  opacity: 0.3;
+  opacity: 0.35;
+  z-index: 1;
 }
 
 .intro-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.65);   /* Darker overlay for mood */
+  z-index: 2;
 }
 
-/* JOURNAL PAGES */
-
+/* JOURNAL PAGES - Much more appealing design */
 .journal-page {
   position: relative;
-  max-width: 700px;
-  margin: 80px auto;
-  padding: 60px;
-  border-radius: 10px;
-  color: #2b2b2b;
+  max-width: 720px;
+  margin: 90px auto;
+  padding: 70px 60px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  color: #F4EFE6;                    /* Light elegant text */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+  z-index: 3;
+  transition: all 0.6s ease;
 }
 
-/* INDIVIDUAL BACKGROUNDS */
-.page1 {
-  background: url('journal1.png') center/cover no-repeat;
+/* Dark overlay on each journal page so text is always readable */
+.journal-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  border-radius: 16px;
+  z-index: 1;
 }
 
-.page2 {
-  background: url('journal2.png') center/cover no-repeat;
+.journal-page > * {
+  position: relative;
+  z-index: 2;
 }
 
-.page3 {
-  background: url('journal3.png') center/cover no-repeat;
-}
+/* Individual journal backgrounds */
+.page1 { background: url('journal1.png') center/cover no-repeat; }
+.page2 { background: url('journal2.png') center/cover no-repeat; }
+.page3 { background: url('journal3.png') center/cover no-repeat; }
 
 .journal-page h1 {
   text-align: center;
-  margin-bottom: 30px;
+  font-size: 2.1rem;
+  margin-bottom: 40px;
+  color: #F4EFE6;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
 }
 
 .journal-page p {
-  line-height: 1.8;
-  margin-bottom: 20px;
+  line-height: 1.85;
+  margin-bottom: 22px;
+  font-size: 1.1rem;
 }
 
 .ending {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.4rem;
+  margin-top: 40px;
+  opacity: 0.9;
 }
 
+/* Next Button - Elegant & thematic */
+.next-btn {
+  display: block;
+  margin: 50px auto 10px;
+  padding: 16px 40px;
+  background: #C2A36B;
+  color: #1f1f1f;
+  font-weight: bold;
+  font-size: 1.15rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: Georgia, serif;
+}
+
+.next-btn:hover {
+  background: #e6c88a;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(194, 163, 107, 0.4);
+}
 
 /* ================= ARTICLES ================= */
 
