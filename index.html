@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>The Horseman</title>
+  <title>The Horseman's Journal</title>
   <link rel="stylesheet" href="style.css">
   <script>
     window.onload = function () {
@@ -11,28 +11,32 @@
   </script>
 </head>
 <body>
-<!-- ================= HERO ================= -->
+
+<!-- ================= HERO - Glassy Journal Style ================= -->
 <section class="hero">
   <div class="nav">
     <a href="#">Home</a>
-    <a href="#">Stories</a>
+    <a href="#intro">Stories</a>
+    <a href="articles.html">Foundations</a>
     <a href="#">Gallery</a>
     <a href="#">Contact</a>
   </div>
-  <img src="hero.jpg" class="hero-img" alt="Horse">
+  <img src="hero.jpg" class="hero-img" alt="The Black Stallion">
   <div class="hero-overlay"></div>
+  <div class="hero-journal-layer"></div>
+  
   <div class="hero-content">
-    <h1>THE HORSEMAN</h1>
+    <h1 class="journal-title">The Horseman's Journal</h1>
     <p class="author">Praveen Kumar</p>
     <p class="quote">
       “A fragile human outside.<br>
       A horse inside.”
     </p>
     <p class="context">
-      Eleven years of learning trust from horses —
+      Eleven years of learning trust from horses —<br>
       and from one black stallion who changed everything.
     </p>
-    <a href="#intro" class="enter-story">ENTER THE STORY</a>
+    <a href="#intro" class="enter-story">ENTER THE JOURNAL</a>
   </div>
 </section>
 
@@ -41,7 +45,7 @@
   <div class="intro-bg"></div>
   <div class="intro-overlay"></div>
 
-  <!-- ================= PAGE 1 ================= -->
+  <!-- PAGE 1 -->
   <div id="page1" class="journal-page page1">
     <h1>The Black Stallion Who Whispered My Name in Hoofbeats</h1>
     <div class="intro-text">
@@ -55,7 +59,7 @@
     <button class="next-btn" onclick="showNext(2)">Continue to Next Entry →</button>
   </div>
 
-  <!-- ================= PAGE 2 (hidden initially) ================= -->
+  <!-- PAGE 2 -->
   <div id="page2" class="journal-page page2" style="display: none;">
     <h1>Journal Entry 2 • The Breaking</h1>
     <div class="intro-text">
@@ -67,10 +71,11 @@
       <p>After that incident, I could not even stand beside him. I went into my room. Twenty days. Cursing myself in ways no human should speak to another.</p>
       <p>But every few days, I forced myself to go see him. And every single time, he showed me what I had taught him. I didn’t understand then that he was trying to reach me.</p>
     </div>
-    <button class="next-btn" onclick="showNext(3)">Continue to Final Entry →</button>
+    <button class="prev-btn" onclick="showPrev(1)">← Back to Previous Entry</button>
+    <button class="next-btn" onclick="showNext(3)" style="margin-left: 20px;">Continue to Final Entry →</button>
   </div>
 
-  <!-- ================= PAGE 3 (hidden initially) ================= -->
+  <!-- PAGE 3 -->
   <div id="page3" class="journal-page page3" style="display: none;">
     <h1>Journal Entry 3 • The Choice</h1>
     <div class="intro-text">
@@ -89,6 +94,7 @@
       <p>If you have read this far, thank you.</p>
       <p class="ending">🖤🐴</p>
     </div>
+    <button class="prev-btn" onclick="showPrev(2)">← Back to Previous Entry</button>
   </div>
 </section>
 
@@ -97,32 +103,28 @@
   <div class="articles-bg"></div>
   <div class="articles-wrapper">
     <h2 class="articles-title">Journal Articles</h2>
-    
     <div class="articles-grid">
       <a href="articles.html" class="article-card">
         <h3>Prey Psychology</h3>
         <p>Understanding how horses perceive fear, pressure, and safety.</p>
       </a>
-      
       <a href="articles.html" class="article-card">
         <h3>Reading Horses</h3>
         <p>Learning to observe subtle signals beyond movement and behavior.</p>
       </a>
-      
       <a href="articles.html" class="article-card">
         <h3>Trust Building</h3>
         <p>How consistency creates a bond deeper than control.</p>
       </a>
-      
       <a href="articles.html" class="article-card">
         <h3>Communication</h3>
         <p>Not taught — felt through presence, timing, and awareness.</p>
       </a>
     </div>
-
     <a href="articles.html" class="explore-btn">Explore All Foundations</a>
   </div>
 </section>
+
 <script>
   function showNext(page) {
     document.getElementById('page' + page).style.display = 'block';
@@ -133,3 +135,6 @@
     document.getElementById('page' + page).scrollIntoView({ behavior: 'smooth' });
   }
 </script>
+
+</body>
+</html>
