@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Horseman • Foundations</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Calm & Elegant Styles for this page */
+    .essay-section {
+      position: relative;
+      padding: 140px 40px 100px;
+      max-width: 820px;
+      margin: 0 auto;
+      color: #F4EFE6;
+      line-height: 1.9;
+      font-size: 1.15rem;
+    }
+
+    .essay-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('horse.png') center/cover no-repeat;
+      opacity: 0.25;
+      z-index: -1;
+    }
+
+    .essay-section .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.68);
+      z-index: -1;
+    }
+
+    .essay-section h1 {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 60px;
+      color: #E8D9B8;
+    }
+
+    .essay-section p {
+      margin-bottom: 28px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    }
+
+    /* Four Foundations Cards */
+    .foundations {
+      padding: 100px 20px 80px;
+      background: #1a1a1a;
+      text-align: center;
+    }
+
+    .foundations h2 {
+      font-size: 2.2rem;
+      color: #E8D9B8;
+      margin-bottom: 60px;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .pillar-card {
+      background: rgba(40, 40, 40, 0.85);
+      border-radius: 16px;
+      padding: 40px 30px;
+      transition: all 0.4s ease;
+      border: 1px solid #C2A36B33;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(194, 163, 107, 0.2);
+      border-color: #C2A36B;
+    }
+
+    .pillar-card h3 {
+      color: #E8D9B8;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+
+    .pillar-card p {
+      color: #C8B89A;
+      line-height: 1.7;
+    }
+
+    /* Pillar Content */
+    .pillar {
+      max-width: 820px;
+      margin: 0 auto 120px;
+      padding: 0 40px;
+    }
+
+    .pillar h2 {
+      font-size: 2.3rem;
+      color: #E8D9B8;
+      text-align: center;
+      margin-bottom: 60px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #C2A36B44;
+    }
+
+    .pillar h3 {
+      font-size: 1.6rem;
+      color: #E8D9B8;
+      margin: 50px 0 20px;
+      position: relative;
+    }
+
+    .pillar h3::before {
+      content: '→';
+      color: #C2A36B;
+      margin-right: 12px;
+    }
+
+    .pillar p {
+      color: #EDE4D4;
+      line-height: 1.85;
+      font-size: 1.12rem;
+      margin-bottom: 24px;
+    }
+
+    /* Reading Horses - Extra calm & stylish */
+    #reading-horses {
+      background: linear-gradient(to bottom, #1f1f1f, #2a2a2a);
+      padding: 100px 40px;
+      border-top: 1px solid #C2A36B33;
+      border-bottom: 1px solid #C2A36B33;
+    }
+
+    #reading-horses .pillar h3 {
+      color: #D4C5A8;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO (same as before) -->
+<section class="hero">
+  <!-- Your existing hero code here -->
+  <div class="nav"> ... </div>
+  <img src="hero.jpg" class="hero-img" alt="Horse">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>THE HORSEMAN</h1>
+    <p class="author">Praveen Kumar</p>
+    <p class="quote">“A fragile human outside.<br>A horse inside.”</p>
+    <p class="context">Eleven years of learning trust from horses — and from one black stallion who changed everything.</p>
+    <a href="#before-you-begin" class="enter-story">ENTER THE STORY</a>
+  </div>
+</section>
+
+<!-- BEFORE YOU BEGIN - Essay (Calm & Elegant) -->
+<section id="before-you-begin" class="essay-section">
+  <div class="overlay"></div>
+  <h1>Before You Begin</h1>
+  <p>To feel what a horse feels is to first understand that you are noise. You arrive trailing the scent of purpose, your pockets full of plans, your mind a cacophony of what was and what will be. You walk with the heavy footfalls of a predator, an animal that does not need to listen before it moves. To the horse, you are a storm on the horizon of their senses. They see the shape of you, but they feel the intention, the hurry, the jagged edges of a mind that never rests. And in your presence, they become what they have always been: a statue carved from a single question—<em>am I safe?</em></p>
+  
+  <p>To connect with them is to decide to become silent. Not just in your voice, but in your soul. You must consciously unburden yourself, letting your agenda fall to the dust like a heavy coat. You stand at the edge of their space and learn to simply be. You begin to breathe. Not the shallow, forgotten breaths of a busy life, but deep, slow tides of air that announce to every listening cell in their body that you are not a threat. You are just a creature, breathing.</p>
+  
+  <p>And that is when the world changes. You stop seeing with your eyes and start feeling with your skin. You feel the cool kiss of the wind on your cheek and understand it is the same wind that is rustling the mane on their neck. You hear the distant drone of a car not as an annoyance, but as a sound that pricks their ears and passes. You feel the solid earth beneath your feet and know they feel it too, a shared foundation. You are no longer a man and a horse. You are two bodies in a field, sharing the same small slice of existence.</p>
+  
+  <p>This is when the mirror appears. The horse, in its profound and silent honesty, begins to show you to yourself. If you carry tension, a tight jaw from unspoken words, a knot of worry in your gut—they will show it to you. They will hold their own body tight, their head high, their muscles coiled. They will not go near the storm inside of you. If you carry a hidden grief, a well of sadness you have refused to acknowledge, they will grow still and soft, their dark, deep eye becoming a pool of liquid sorrow that reflects your own. They absorb your truth and show it back to you without a word of judgment.</p>
+  
+  <p>They have lived in fear. They understand the hum of hypervigilance, the way a body can be a prison of held-back energy. And when they see it in you, they do not run. They recognize it. It is a language they were born speaking.</p>
+  
+  <p>The moment of connection, when it finally comes, is not a grand event. It is a surrender. It is the slow, deliberate exhale you’ve been holding. It is the horse, feeling that release, letting out its own shuddering sigh in response. It is the quiet step they take toward you, not because you asked, but because you finally became a place of peace. It is the soft, searching muzzle that touches your arm, a question asked without sound. And in that touch, a universe of trust is exchanged. You are no longer a predator. You have been accepted. You are, for a moment, part of the herd. You are safe, and so are they.</p>
+  
+  <p>To walk away from that is to feel the noise of the world rush back in, but you are different now. You are more solid, more present. You carry the stillness of the field inside you. You have been seen by an ancient soul, and in their honesty, you have been given a chance to honestly see yourself. You have learned that the deepest communication requires no words at all, only a shared and silent breath.</p>
+</section>
+
+<!-- THE FOUR FOUNDATIONS -->
+<section class="foundations">
+  <h2>The Four Foundations</h2>
+  <div class="pillars-grid">
+    <div class="pillar-card">
+      <h3>1. Prey Psychology</h3>
+      <p>How horses experience the world as prey animals and why this changes everything.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>2. Reading Horses</h3>
+      <p>Learning to truly see and feel what the horse is communicating in every moment.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>3. Communication</h3>
+      <p>The language of pressure, release, and presence — beyond dominance.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>4. Trust Building</h3>
+      <p>What real trust looks like and how it transforms the relationship.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PILLAR 1: Prey Psychology -->
+<section class="pillar" id="prey-psychology">
+  <h2>Prey Psychology</h2>
+  <h3>The Psychology of Prey Animals</h3>
+  <p>Content for this sub-section goes here...</p>
+
+  <h3>The Nervous System of a Horse</h3>
+  <p>Content for this sub-section goes here...</p>
+
+  <h3>The Answer to State</h3>
+  <p>Content for this sub-section goes here...</p>
+
+  <h3>Why Your Horse Stops Responding</h3>
+  <p>Content for this sub-section goes here...</p>
+</section>
+
+<!-- PILLAR 2: Reading Horses - Calm & Stylish -->
+<section class="pillar" id="reading-horses">
+  <h2>Reading Horses</h2>
+  <h3>Reading a Horse — Beyond the Obvious</h3>
+  <p>Content for this sub-section goes here...</p>
+
+  <h3>Subtle Signals (breathing, eyes, tension)</h3>
+  <p>Content for this sub-section goes here...</p>
+
+  <h3>The Moment Before the Reaction</h3>
+  <p>Content for this sub-section goes here...</p>
+</section>
+
+<!-- PILLAR 3: Communication -->
+<section class="pillar" id="communication">
+  <h2>Communication</h2>
+  <h3>Pressure and Release — The Language They Understand</h3>
+  <p>Content for this sub-section goes here...</p>
+
+  <h3>Communication</h3>
+  <p>Content for this sub-section goes here...</p>
+
+  <h3>The Myth of Dominance in Horses</h3>
+  <p>Content for this sub-section goes here...</p>
+</section>
+
+<!-- PILLAR 4: Trust Building -->
+<section class="pillar" id="trust-building">
+  <h2>Trust Building</h2>
+  <h3>Trust Before Training</h3>
+  <p>Content for this sub-section goes here...</p>
+
+  <h3>Fear vs Disrespect</h3>
+  <p>Content for this sub-section goes here...</p>
+
+  <h3>Healing Without Forcing</h3>
+  <p>Content for this sub-section goes here...</p>
+
+  <h3>When a Horse Trusts You — What It Really Means</h3>
+  <p>Content for this sub-section goes here...</p>
+</section>
+
+</body>
+</html>
