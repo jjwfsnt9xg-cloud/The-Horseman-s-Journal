@@ -123,3 +123,13 @@
     <a href="articles.html" class="explore-btn">Explore All Foundations</a>
   </div>
 </section>
+<script>
+  function showNext(page) {
+    document.getElementById('page' + page).style.display = 'block';
+    document.getElementById('page' + page).scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function showPrev(page) {
+    document.getElementById('page' + page).scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
