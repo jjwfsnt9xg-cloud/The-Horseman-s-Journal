@@ -13,16 +13,17 @@ body {
 }
 
 
-/* ================= HERO ================= */
-
+/* ================= HERO - Glassy Journal Style ================= */
 .hero {
   position: relative;
-  width: 90%;
-  max-width: 1200px;
-  height: 85vh;
+  width: 92%;
+  max-width: 1280px;
+  height: 88vh;
   margin: 40px auto;
-  border-radius: 20px;
+  border-radius: 24px;
   overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(194, 163, 107, 0.25);
 }
 
 .hero-img {
@@ -30,12 +31,28 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: contrast(1.05) saturate(0.95);
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 15, 15, 0.65),
+    rgba(15, 15, 15, 0.85) 60%,
+    rgba(15, 15, 15, 0.95)
+  );
+  z-index: 2;
+}
+
+.hero-journal-layer {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 248, 230, 0.06);
+  z-index: 3;
+  mix-blend-mode: overlay;
+  pointer-events: none;
 }
 
 .hero-content {
@@ -44,29 +61,65 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  z-index: 4;
+  max-width: 720px;
+  padding: 0 20px;
 }
 
-.nav {
-  position: absolute;
-  top: 20px;
-  right: 30px;
+.journal-title {
+  font-size: 4.2rem;
+  font-weight: normal;
+  color: #E8D9B8;
+  margin-bottom: 12px;
+  letter-spacing: 3px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
 }
 
-.nav a {
-  margin-left: 15px;
-  color: #ccc;
-  text-decoration: none;
+.author {
+  font-size: 1.35rem;
+  color: #C2A36B;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+.quote {
+  font-size: 1.45rem;
+  line-height: 1.6;
+  color: #F4EFE6;
+  margin-bottom: 30px;
+  font-style: italic;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.context {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: #D4C5A8;
+  margin-bottom: 50px;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .enter-story {
   display: inline-block;
-  margin-top: 20px;
-  padding: 10px 25px;
-  border: 1px solid #C2A36B;
-  color: #C2A36B;
+  padding: 16px 42px;
+  border: 2px solid #C2A36B;
+  color: #E8D9B8;
   text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  transition: all 0.4s ease;
+  background: rgba(0, 0, 0, 0.4);
 }
 
+.enter-story:hover {
+  background: #C2A36B;
+  color: #1f1f1f;
+  transform: translateY(-4px);
+}
 
 /* ================= INTRO CINEMATIC ================= */
 .intro-cinematic {
