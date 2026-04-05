@@ -13,17 +13,16 @@ body {
 }
 
 
-/* ================= HERO - Glassy Journal Style ================= */
+/* ================= HERO - Fixed Glassy Journal Style ================= */
 .hero {
   position: relative;
-  width: 92%;
+  width: 100%;
   max-width: 1280px;
   height: 88vh;
-  margin: 40px auto;
-  border-radius: 24px;
+  margin: 0 auto;
+  border-radius: 0;           /* Removed round corners to avoid white edges */
   overflow: hidden;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(194, 163, 107, 0.25);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
 }
 
 .hero-img {
@@ -31,7 +30,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: contrast(1.05) saturate(0.95);
+  filter: brightness(0.85) contrast(1.1) saturate(0.9);   /* Less blurry, better balance */
 }
 
 .hero-overlay {
@@ -39,9 +38,9 @@ body {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(15, 15, 15, 0.65),
-    rgba(15, 15, 15, 0.85) 60%,
-    rgba(15, 15, 15, 0.95)
+    rgba(10, 10, 10, 0.55),
+    rgba(10, 10, 10, 0.75) 50%,
+    rgba(10, 10, 10, 0.92)
   );
   z-index: 2;
 }
@@ -49,7 +48,7 @@ body {
 .hero-journal-layer {
   position: absolute;
   inset: 0;
-  background: rgba(255, 248, 230, 0.06);
+  background: rgba(255, 248, 230, 0.05);
   z-index: 3;
   mix-blend-mode: overlay;
   pointer-events: none;
@@ -63,58 +62,85 @@ body {
   text-align: center;
   z-index: 4;
   max-width: 720px;
-  padding: 0 20px;
+  padding: 0 30px;
 }
 
 .journal-title {
-  font-size: 4.2rem;
+  font-size: 4.4rem;
   font-weight: normal;
   color: #E8D9B8;
-  margin-bottom: 12px;
-  letter-spacing: 3px;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  margin-bottom: 16px;
+  letter-spacing: 4px;
+  text-shadow: 0 6px 25px rgba(0, 0, 0, 0.85);
 }
 
 .author {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   color: #C2A36B;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   letter-spacing: 2px;
 }
 
 .quote {
-  font-size: 1.45rem;
-  line-height: 1.6;
+  font-size: 1.5rem;
+  line-height: 1.65;
   color: #F4EFE6;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   font-style: italic;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8);
 }
 
 .context {
-  font-size: 1.15rem;
-  line-height: 1.75;
+  font-size: 1.18rem;
+  line-height: 1.8;
   color: #D4C5A8;
-  margin-bottom: 50px;
-  max-width: 580px;
+  margin-bottom: 55px;
+  max-width: 620px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .enter-story {
   display: inline-block;
-  padding: 16px 42px;
+  padding: 18px 48px;
   border: 2px solid #C2A36B;
   color: #E8D9B8;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.22rem;
   font-weight: bold;
   letter-spacing: 2px;
   border-radius: 8px;
   transition: all 0.4s ease;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(30, 30, 30, 0.5);
 }
 
+.enter-story:hover {
+  background: #C2A36B;
+  color: #1f1f1f;
+  transform: translateY(-4px);
+}
+
+/* Nav fix - make it blend better */
+.nav {
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 35px;
+  font-size: 1.05rem;
+}
+
+.nav a {
+  color: #E8D9B8;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #C2A36B;
+}
 .enter-story:hover {
   background: #C2A36B;
   color: #1f1f1f;
