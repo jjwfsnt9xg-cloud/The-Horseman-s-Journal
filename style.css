@@ -12,14 +12,13 @@ body {
   background-attachment: fixed;
 }
 
-/* ================= HERO - Glass Block + 3D Nav ================= */
+/* ================= HERO - Final Fixed Version ================= */
 .hero {
   position: relative;
   width: 100%;
   height: 100vh;
   margin: 0;
   overflow: hidden;
-  background: #0a0a0a;
 }
 
 .hero-img {
@@ -29,37 +28,52 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.90) contrast(1.05);
+  object-position: center 30%;   /* Adjusts framing so horse is not cut off */
+  filter: brightness(0.92) contrast(1.08);
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(10, 10, 10, 0.65);
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.35),
+    rgba(10, 10, 10, 0.65) 50%,
+    rgba(10, 10, 10, 0.88)
+  );
   z-index: 1;
 }
 
-/* Glassy Navigation Bar */
+.hero-journal-layer {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 248, 230, 0.05);
+  z-index: 2;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Glassy Navigation */
 .nav-glass {
   position: absolute;
-  top: 30px;
+  top: 35px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
-  background: rgba(20, 20, 20, 0.75);
+  background: rgba(20, 20, 20, 0.78);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(194, 163, 107, 0.3);
   border-radius: 50px;
-  padding: 14px 40px;
+  padding: 12px 42px;
   display: flex;
-  gap: 38px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  gap: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
 .nav-glass a {
   color: #E8D9B8;
   text-decoration: none;
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   transition: color 0.3s;
 }
 
@@ -70,33 +84,32 @@ body {
 /* Glass Text Block */
 .hero-glass-content {
   position: absolute;
-  top: 50%;
+  top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
-  background: rgba(25, 25, 25, 0.68);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(194, 163, 107, 0.35);
-  border-radius: 20px;
-  padding: 60px 70px;
-  max-width: 680px;
+  background: rgba(20, 20, 20, 0.72);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(194, 163, 107, 0.4);
+  border-radius: 22px;
+  padding: 55px 75px;
+  max-width: 660px;
   text-align: center;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
 }
 
 .journal-title {
-  font-size: 4.1rem;
+  font-size: 4.2rem;
   color: #E8D9B8;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   letter-spacing: 3px;
-  text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+  text-shadow: 0 6px 20px rgba(0,0,0,0.85);
 }
 
 .author {
-  font-size: 1.38rem;
+  font-size: 1.35rem;
   color: #C2A36B;
   margin-bottom: 35px;
-  letter-spacing: 2px;
 }
 
 .quote {
@@ -105,25 +118,25 @@ body {
   color: #F4EFE6;
   margin-bottom: 38px;
   font-style: italic;
-  text-shadow: 0 3px 10px rgba(0,0,0,0.7);
+  text-shadow: 0 3px 12px rgba(0,0,0,0.8);
 }
 
 .context {
   font-size: 1.18rem;
   line-height: 1.8;
   color: #D4C5A8;
-  margin-bottom: 55px;
+  margin-bottom: 60px;
 }
 
 .enter-story {
   display: inline-block;
-  padding: 16px 48px;
+  padding: 16px 50px;
   border: 2px solid #C2A36B;
   color: #E8D9B8;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.22rem;
   font-weight: bold;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   border-radius: 8px;
   transition: all 0.4s ease;
   background: rgba(0, 0, 0, 0.4);
@@ -134,7 +147,6 @@ body {
   color: #1f1f1f;
   transform: translateY(-3px);
 }
-
 /* ================= INTRO CINEMATIC ================= */
 .intro-cinematic {
   position: relative;
