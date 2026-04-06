@@ -12,13 +12,12 @@ body {
   background-attachment: fixed;
 }
 
-
-/* ================= HERO - Clean Full-Bleed Journal Style ================= */
+/* ================= HERO - Clean & Fixed ================= */
 .hero {
   position: relative;
   width: 100%;
-  height: 92vh;
-  margin: 0 auto;
+  height: 100vh;           /* Full screen height */
+  margin: 0;
   overflow: hidden;
   background: #0a0a0a;
 }
@@ -30,7 +29,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.82) contrast(1.08);
+  filter: brightness(0.88) contrast(1.05) saturate(0.95);
 }
 
 .hero-overlay {
@@ -38,9 +37,10 @@ body {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(10, 10, 10, 0.45),
-    rgba(10, 10, 10, 0.75) 45%,
-    rgba(10, 10, 10, 0.92) 75%
+    rgba(10, 10, 10, 0.4),
+    rgba(10, 10, 10, 0.65) 40%,
+    rgba(10, 10, 10, 0.88) 70%,
+    rgba(10, 10, 10, 0.95)
   );
   z-index: 2;
 }
@@ -48,7 +48,7 @@ body {
 .hero-journal-layer {
   position: absolute;
   inset: 0;
-  background: rgba(255, 248, 230, 0.07);
+  background: rgba(255, 248, 230, 0.06);
   z-index: 3;
   mix-blend-mode: overlay;
   pointer-events: none;
@@ -61,14 +61,14 @@ body {
   transform: translateX(-50%);
   z-index: 10;
   display: flex;
-  gap: 40px;
-  font-size: 1.08rem;
+  gap: 45px;
+  font-size: 1.1rem;
 }
 
 .nav a {
   color: #E8D9B8;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 .nav a:hover {
@@ -77,22 +77,21 @@ body {
 
 .hero-content {
   position: absolute;
-  top: 50%;
+  top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 5;
   max-width: 760px;
-  padding: 0 20px;
+  padding: 0 30px;
 }
 
 .journal-title {
-  font-size: 4.5rem;
+  font-size: 4.6rem;
   color: #E8D9B8;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   letter-spacing: 4px;
-  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.9);
-  line-height: 1.1;
+  text-shadow: 0 8px 30px rgba(0,0,0,0.9);
 }
 
 .author {
@@ -103,20 +102,20 @@ body {
 }
 
 .quote {
-  font-size: 1.52rem;
+  font-size: 1.55rem;
   line-height: 1.65;
   color: #F4EFE6;
-  margin-bottom: 38px;
+  margin-bottom: 40px;
   font-style: italic;
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.85);
+  text-shadow: 0 4px 15px rgba(0,0,0,0.8);
 }
 
 .context {
-  font-size: 1.2rem;
+  font-size: 1.22rem;
   line-height: 1.8;
   color: #D4C5A8;
-  margin-bottom: 60px;
-  max-width: 640px;
+  margin-bottom: 65px;
+  max-width: 650px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -130,9 +129,9 @@ body {
   font-size: 1.25rem;
   font-weight: bold;
   letter-spacing: 2px;
-  border-radius: 6px;
+  border-radius: 8px;
   transition: all 0.4s ease;
-  background: rgba(20, 20, 20, 0.6);
+  background: rgba(25, 25, 25, 0.55);
 }
 
 .enter-story:hover {
@@ -140,6 +139,7 @@ body {
   color: #1f1f1f;
   transform: translateY(-4px);
 }
+
 /* ================= INTRO CINEMATIC ================= */
 .intro-cinematic {
   position: relative;
@@ -332,6 +332,7 @@ body {
   color: #1f1f1f;
   transform: scale(1.05);
 }
+
 /* ================= MOBILE ================= */
 
 @media (max-width: 900px) {
