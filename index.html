@@ -3,181 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Horseman's Journal | MMXXVI</title>
+    <title>The Horseman's Journal | Cinematic Experience</title>
     <style>
-        :root {
-            --gold: #c5a059;
-            --dark: #0a0a0a;
-            --glass: rgba(255, 255, 255, 0.05);
-        }
-
+        /* 1. The Base Layer: 
+           Set the canvas. Make sure the background is pure black 
+           so the scene fades perfectly.
+        */
         body, html {
             margin: 0;
             padding: 0;
-            background-color: var(--dark);
-            color: white;
-            font-family: 'Georgia', serif;
-            overflow-x: hidden;
-        }
-
-        /* --- 3D Navigation Bar --- */
-        nav {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%) perspective(1000px) rotateX(10deg);
-            z-index: 1000;
-            background: var(--glass);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 10px 30px;
-            border-radius: 50px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Prevents scrollbars */
+            background-color: #000000; /* Deep black foundation */
             display: flex;
-            gap: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease;
+            justify-content: center; /* Center horizontally */
+            align-items: center;    /* Center vertically */
         }
 
-        nav:hover {
-            transform: translateX(-50%) perspective(1000px) rotateX(0deg);
-        }
-
-        nav a {
-            color: #eee;
-            text-decoration: none;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: color 0.3s;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: var(--gold);
-            text-shadow: 0 0 10px var(--gold);
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* 2. The Motion Asset (Video):
+           This container holds the video, ensuring it covers the whole screen.
+        */
+        .cinematic-container {
             position: relative;
-            overflow: hidden;
-            text-align: center;
+            width: 100vw;
+            height: 100vh;
         }
 
-        /* 3D Motion Background */
-        .hero-bg {
+        /* The video is set to 'cover', meaning it expands 
+           to fill the screen, like a cinematic movie frame.
+        */
+        #hero-video {
             position: absolute;
-            top: -10%;
-            left: -10%;
-            width: 120%;
-            height: 120%;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&q=80&w=2071');
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
-            animation: subtleZoom 20s infinite alternate ease-in-out;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover; /* Critically important for the "cover" effect */
+            z-index: 1; /* Places the video on the bottom layer */
         }
 
-        @keyframes subtleZoom {
-            from { transform: scale(1) translate(0, 0); }
-            to { transform: scale(1.1) translate(-2%, -2%); }
-        }
-
-        /* Floating Content Overlay */
-        .content {
-            z-index: 2;
-            max-width: 900px;
-            padding: 20px;
-            transform: perspective(1000px) rotateY(-5deg);
-            animation: float 6s infinite ease-in-out;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotateY(-5deg); }
-            50% { transform: translateY(-20px) rotateY(5deg); }
-        }
-
-        .welcome-text {
-            font-size: 1rem;
-            letter-spacing: 8px;
-            color: var(--gold);
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        h1 {
-            font-size: 5rem;
-            margin: 0;
-            line-height: 0.9;
-            text-transform: uppercase;
-            font-style: italic;
-            text-shadow: 4px 4px 15px rgba(0,0,0,0.8);
-        }
-
-        h1 span {
-            display: block;
-            font-size: 3rem;
-            font-style: normal;
-        }
-
-        .tagline {
-            margin-top: 20px;
-            font-size: 1.1rem;
-            letter-spacing: 3px;
-            opacity: 0.8;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .scroll-indicator {
+        /* 3. (Optional) The Vignette Overlay:
+           This adds a subtle dark gradient around the edges, 
+           perfectly focusing the eye on the center approach.
+        */
+        .vignette {
             position: absolute;
-            bottom: 30px;
-            width: 1px;
-            height: 80px;
-            background: linear-gradient(transparent, var(--gold));
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scaleY(0); transform-origin: top; }
-            50% { transform: scaleY(1); transform-origin: top; }
-            51% { transform: scaleY(1); transform-origin: bottom; }
-            100% { transform: scaleY(0); transform-origin: bottom; }
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0,0,0,0) 60%, rgba(0,0,0,0.8) 100%);
+            z-index: 2; /* Sits on top of the video */
+            pointer-events: none; /* Allows clicks to pass through */
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#">Genesis</a>
-        <a href="#">Awakening</a>
-        <a href="#">Chronicles</a>
-        <a href="#">Companions</a>
-        <a href="#">Verses</a>
-    </nav>
+    <div class="cinematic-container">
+        <video autoplay loop muted playsinline id="hero-video">
+            <source src="hyper-real-horse.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-    <section class="hero">
-        <div class="hero-bg"></div>
-        
-        <div class="content">
-            <p class="welcome-text">Welcome to the world of</p>
-            <h1>The Horseman's<span>Journal</span></h1>
-            <p style="color: var(--gold); margin-top: 10px; letter-spacing: 4px;">MMXXVI</p>
-            <p class="tagline">
-                WHERE LEGENDS ARE WRITTEN, STORIES RIDE ETERNAL<br>
-                AND EVERY WORD ECHOES THROUGH THE AGES.
-            </p>
-        </div>
+        <div class="vignette"></div>
+    </div>
 
-        <div class="scroll-indicator"></div>
-    </section>
-  <!-- ================= INTRO (JOURNAL 3 PAGES) ================= -->
+</body>
+</html>  
+
+<!-- ================= INTRO (JOURNAL 3 PAGES) ================= -->
 <section id="intro" class="intro-cinematic">
   <div class="intro-bg"></div>
   <div class="intro-overlay"></div>
